@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import SwiftyJSON
+import Firebase
 
 class HomeScreenVC: UIViewController {
-	@IBOutlet var nameLabel: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +31,7 @@ class HomeScreenVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-	@IBAction func statButtonTapped(_ sender: Any) {
-		
+	@IBAction func logInButtontapped(_ sender: Any) {
 	}
-	
 	
 }

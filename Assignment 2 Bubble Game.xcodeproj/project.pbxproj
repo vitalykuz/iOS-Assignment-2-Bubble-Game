@@ -19,6 +19,12 @@
 		D8450B0E1EC683DA000468C7 /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B0D1EC683DA000468C7 /* HomeScreenVC.swift */; };
 		D8450B191EC6878A000468C7 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B181EC6878A000468C7 /* MenuVC.swift */; };
 		D8450B1B1EC6ED8A000468C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8450B1A1EC6ED8A000468C7 /* GoogleService-Info.plist */; };
+		D8450B1D1EC6F1F9000468C7 /* TextViewCustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B1C1EC6F1F9000468C7 /* TextViewCustomField.swift */; };
+		D8450B201EC6F2A8000468C7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B1F1EC6F2A8000468C7 /* Constants.swift */; };
+		D8450B221EC6F428000468C7 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B211EC6F428000468C7 /* ShadowView.swift */; };
+		D8450B241EC6F477000468C7 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B231EC6F477000468C7 /* CircleImageView.swift */; };
+		D8450B261EC6F48C000468C7 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B251EC6F48C000468C7 /* RoundButton.swift */; };
+		D8450B281EC6F563000468C7 /* ButtonCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B271EC6F563000468C7 /* ButtonCustomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +42,12 @@
 		D8450B0D1EC683DA000468C7 /* HomeScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
 		D8450B181EC6878A000468C7 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		D8450B1A1EC6ED8A000468C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D8450B1C1EC6F1F9000468C7 /* TextViewCustomField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewCustomField.swift; sourceTree = "<group>"; };
+		D8450B1F1EC6F2A8000468C7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D8450B211EC6F428000468C7 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		D8450B231EC6F477000468C7 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		D8450B251EC6F48C000468C7 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		D8450B271EC6F563000468C7 /* ButtonCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCustomView.swift; sourceTree = "<group>"; };
 		DA6C7D7C9AA6A93647559AD7 /* Pods_Assignment_2_Bubble_Game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment_2_Bubble_Game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C573DF2F3EB368EECC1113 /* Pods-Assignment 2 Bubble Game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment 2 Bubble Game.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment 2 Bubble Game/Pods-Assignment 2 Bubble Game.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +102,7 @@
 		D8450AF41EC6829C000468C7 /* Assignment 2 Bubble Game */ = {
 			isa = PBXGroup;
 			children = (
+				D8450B1E1EC6F29C000468C7 /* Util */,
 				D8450B151EC684DB000468C7 /* Model */,
 				D8450B141EC684D5000468C7 /* Controller */,
 				D8450B131EC684C8000468C7 /* View */,
@@ -117,6 +130,11 @@
 			children = (
 				D8450AFB1EC6829C000468C7 /* GameScene.swift */,
 				D8450AF71EC6829C000468C7 /* GameScene.sks */,
+				D8450B1C1EC6F1F9000468C7 /* TextViewCustomField.swift */,
+				D8450B211EC6F428000468C7 /* ShadowView.swift */,
+				D8450B231EC6F477000468C7 /* CircleImageView.swift */,
+				D8450B251EC6F48C000468C7 /* RoundButton.swift */,
+				D8450B271EC6F563000468C7 /* ButtonCustomView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -136,6 +154,14 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		D8450B1E1EC6F29C000468C7 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D8450B1F1EC6F2A8000468C7 /* Constants.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,10 +292,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8450AFC1EC6829C000468C7 /* GameScene.swift in Sources */,
+				D8450B241EC6F477000468C7 /* CircleImageView.swift in Sources */,
 				D8450AFE1EC6829C000468C7 /* GameViewController.swift in Sources */,
 				D8450AF61EC6829C000468C7 /* AppDelegate.swift in Sources */,
+				D8450B281EC6F563000468C7 /* ButtonCustomView.swift in Sources */,
 				D8450B0E1EC683DA000468C7 /* HomeScreenVC.swift in Sources */,
+				D8450B221EC6F428000468C7 /* ShadowView.swift in Sources */,
+				D8450B261EC6F48C000468C7 /* RoundButton.swift in Sources */,
+				D8450B201EC6F2A8000468C7 /* Constants.swift in Sources */,
 				D8450B191EC6878A000468C7 /* MenuVC.swift in Sources */,
+				D8450B1D1EC6F1F9000468C7 /* TextViewCustomField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

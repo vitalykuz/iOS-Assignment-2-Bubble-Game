@@ -7,6 +7,7 @@ target 'Assignment 2 Bubble Game' do
 
   # Pods for Assignment 2 Bubble Game
   pod 'SwiftyJSON'
+  pod 'Firebase'
   pod ‘Firebase/Core’
   pod ‘Firebase/Auth’
   pod ‘Firebase/Database’
