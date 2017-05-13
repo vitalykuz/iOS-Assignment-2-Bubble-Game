@@ -18,6 +18,7 @@
 		D8450B061EC6829C000468C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8450B041EC6829C000468C7 /* LaunchScreen.storyboard */; };
 		D8450B0E1EC683DA000468C7 /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B0D1EC683DA000468C7 /* HomeScreenVC.swift */; };
 		D8450B191EC6878A000468C7 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B181EC6878A000468C7 /* MenuVC.swift */; };
+		D8450B1B1EC6ED8A000468C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8450B1A1EC6ED8A000468C7 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D8450B071EC6829C000468C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8450B0D1EC683DA000468C7 /* HomeScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
 		D8450B181EC6878A000468C7 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		D8450B1A1EC6ED8A000468C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA6C7D7C9AA6A93647559AD7 /* Pods_Assignment_2_Bubble_Game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment_2_Bubble_Game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C573DF2F3EB368EECC1113 /* Pods-Assignment 2 Bubble Game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment 2 Bubble Game.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment 2 Bubble Game/Pods-Assignment 2 Bubble Game.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 				D8450B021EC6829C000468C7 /* Assets.xcassets */,
 				D8450B041EC6829C000468C7 /* LaunchScreen.storyboard */,
 				D8450B071EC6829C000468C7 /* Info.plist */,
+				D8450B1A1EC6ED8A000468C7 /* GoogleService-Info.plist */,
 			);
 			path = "Assignment 2 Bubble Game";
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				D8450B031EC6829C000468C7 /* Assets.xcassets in Resources */,
 				D8450B061EC6829C000468C7 /* LaunchScreen.storyboard in Resources */,
 				D8450AFA1EC6829C000468C7 /* Actions.sks in Resources */,
+				D8450B1B1EC6ED8A000468C7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

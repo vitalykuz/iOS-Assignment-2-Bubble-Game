@@ -8,6 +8,10 @@
 
 import UIKit
 import SwiftyJSON
+import Firebase
+import FirebaseAuth
+import FirebaseCore
+import FirebaseDatabase
 
 
 class MenuVC: UIViewController {
