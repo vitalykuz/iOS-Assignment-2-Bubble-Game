@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25FC9624A6C4389266C8412A /* Pods_Assignment_2_Bubble_Game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6C7D7C9AA6A93647559AD7 /* Pods_Assignment_2_Bubble_Game.framework */; };
 		D8450AF61EC6829C000468C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450AF51EC6829C000468C7 /* AppDelegate.swift */; };
 		D8450AF81EC6829C000468C7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D8450AF71EC6829C000468C7 /* GameScene.sks */; };
 		D8450AFA1EC6829C000468C7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = D8450AF91EC6829C000468C7 /* Actions.sks */; };
@@ -15,9 +16,12 @@
 		D8450B011EC6829C000468C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8450AFF1EC6829C000468C7 /* Main.storyboard */; };
 		D8450B031EC6829C000468C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8450B021EC6829C000468C7 /* Assets.xcassets */; };
 		D8450B061EC6829C000468C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8450B041EC6829C000468C7 /* LaunchScreen.storyboard */; };
+		D8450B0E1EC683DA000468C7 /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B0D1EC683DA000468C7 /* HomeScreenVC.swift */; };
+		D8450B191EC6878A000468C7 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B181EC6878A000468C7 /* MenuVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32EBDAC62D97DC5A300BE31F /* Pods-Assignment 2 Bubble Game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment 2 Bubble Game.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment 2 Bubble Game/Pods-Assignment 2 Bubble Game.release.xcconfig"; sourceTree = "<group>"; };
 		D8450AF21EC6829C000468C7 /* Assignment 2 Bubble Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment 2 Bubble Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8450AF51EC6829C000468C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8450AF71EC6829C000468C7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -28,6 +32,10 @@
 		D8450B021EC6829C000468C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8450B051EC6829C000468C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8450B071EC6829C000468C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8450B0D1EC683DA000468C7 /* HomeScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
+		D8450B181EC6878A000468C7 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		DA6C7D7C9AA6A93647559AD7 /* Pods_Assignment_2_Bubble_Game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment_2_Bubble_Game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7C573DF2F3EB368EECC1113 /* Pods-Assignment 2 Bubble Game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment 2 Bubble Game.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment 2 Bubble Game/Pods-Assignment 2 Bubble Game.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25FC9624A6C4389266C8412A /* Pods_Assignment_2_Bubble_Game.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18BE0AEFC69565815686C13D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA6C7D7C9AA6A93647559AD7 /* Pods_Assignment_2_Bubble_Game.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5F022A09035DFC38AC8BEB4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7C573DF2F3EB368EECC1113 /* Pods-Assignment 2 Bubble Game.debug.xcconfig */,
+				32EBDAC62D97DC5A300BE31F /* Pods-Assignment 2 Bubble Game.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D8450AE91EC6829C000468C7 = {
 			isa = PBXGroup;
 			children = (
 				D8450AF41EC6829C000468C7 /* Assignment 2 Bubble Game */,
 				D8450AF31EC6829C000468C7 /* Products */,
+				5F022A09035DFC38AC8BEB4D /* Pods */,
+				18BE0AEFC69565815686C13D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,17 +88,51 @@
 		D8450AF41EC6829C000468C7 /* Assignment 2 Bubble Game */ = {
 			isa = PBXGroup;
 			children = (
+				D8450B151EC684DB000468C7 /* Model */,
+				D8450B141EC684D5000468C7 /* Controller */,
+				D8450B131EC684C8000468C7 /* View */,
+				D8450B121EC684C1000468C7 /* Resources */,
 				D8450AF51EC6829C000468C7 /* AppDelegate.swift */,
-				D8450AF71EC6829C000468C7 /* GameScene.sks */,
 				D8450AF91EC6829C000468C7 /* Actions.sks */,
-				D8450AFB1EC6829C000468C7 /* GameScene.swift */,
-				D8450AFD1EC6829C000468C7 /* GameViewController.swift */,
 				D8450AFF1EC6829C000468C7 /* Main.storyboard */,
 				D8450B021EC6829C000468C7 /* Assets.xcassets */,
 				D8450B041EC6829C000468C7 /* LaunchScreen.storyboard */,
 				D8450B071EC6829C000468C7 /* Info.plist */,
 			);
 			path = "Assignment 2 Bubble Game";
+			sourceTree = "<group>";
+		};
+		D8450B121EC684C1000468C7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D8450B131EC684C8000468C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D8450AFB1EC6829C000468C7 /* GameScene.swift */,
+				D8450AF71EC6829C000468C7 /* GameScene.sks */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D8450B141EC684D5000468C7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D8450AFD1EC6829C000468C7 /* GameViewController.swift */,
+				D8450B0D1EC683DA000468C7 /* HomeScreenVC.swift */,
+				D8450B181EC6878A000468C7 /* MenuVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D8450B151EC684DB000468C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +142,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8450B0A1EC6829C000468C7 /* Build configuration list for PBXNativeTarget "Assignment 2 Bubble Game" */;
 			buildPhases = (
+				2025B021778461611661F91B /* [CP] Check Pods Manifest.lock */,
 				D8450AEE1EC6829C000468C7 /* Sources */,
 				D8450AEF1EC6829C000468C7 /* Frameworks */,
 				D8450AF01EC6829C000468C7 /* Resources */,
+				BBD1E91D844C1627A15A9347 /* [CP] Embed Pods Frameworks */,
+				9E0C220198672FAE4484A493 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +208,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2025B021778461611661F91B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9E0C220198672FAE4484A493 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Assignment 2 Bubble Game/Pods-Assignment 2 Bubble Game-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBD1E91D844C1627A15A9347 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Assignment 2 Bubble Game/Pods-Assignment 2 Bubble Game-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D8450AEE1EC6829C000468C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -151,6 +264,8 @@
 				D8450AFC1EC6829C000468C7 /* GameScene.swift in Sources */,
 				D8450AFE1EC6829C000468C7 /* GameViewController.swift in Sources */,
 				D8450AF61EC6829C000468C7 /* AppDelegate.swift in Sources */,
+				D8450B0E1EC683DA000468C7 /* HomeScreenVC.swift in Sources */,
+				D8450B191EC6878A000468C7 /* MenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +386,7 @@
 		};
 		D8450B0B1EC6829C000468C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7C573DF2F3EB368EECC1113 /* Pods-Assignment 2 Bubble Game.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KU5BPZ27UR;
@@ -284,6 +400,7 @@
 		};
 		D8450B0C1EC6829C000468C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32EBDAC62D97DC5A300BE31F /* Pods-Assignment 2 Bubble Game.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KU5BPZ27UR;
@@ -314,6 +431,7 @@
 				D8450B0C1EC6829C000468C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
