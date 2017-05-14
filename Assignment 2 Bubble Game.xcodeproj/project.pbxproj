@@ -29,7 +29,7 @@
 		D8450B2B1EC70169000468C7 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B2A1EC70169000468C7 /* DataService.swift */; };
 		D847F6D21EC8737400084B2A /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D847F6D11EC8737400084B2A /* SettingsVC.swift */; };
 		D847F6D61EC87FC100084B2A /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D847F6D51EC87FC100084B2A /* CustomSlider.swift */; };
-		D847F6DA1EC89ACB00084B2A /* BubbleGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D847F6D91EC89ACB00084B2A /* BubbleGameScene.sks */; };
+		D847F6DC1EC8A31600084B2A /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = D847F6DB1EC8A31600084B2A /* pop.wav */; };
 		D8523C091EC7F0BA001CCCA6 /* BestScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8523C081EC7F0BA001CCCA6 /* BestScoreCell.swift */; };
 		D8523C0B1EC86FD5001CCCA6 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8523C0A1EC86FD5001CCCA6 /* MenuVC.swift */; };
 /* End PBXBuildFile section */
@@ -59,7 +59,7 @@
 		D8450B2A1EC70169000468C7 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		D847F6D11EC8737400084B2A /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		D847F6D51EC87FC100084B2A /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
-		D847F6D91EC89ACB00084B2A /* BubbleGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BubbleGameScene.sks; sourceTree = "<group>"; };
+		D847F6DB1EC8A31600084B2A /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
 		D8523C081EC7F0BA001CCCA6 /* BestScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestScoreCell.swift; sourceTree = "<group>"; };
 		D8523C0A1EC86FD5001CCCA6 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		DA6C7D7C9AA6A93647559AD7 /* Pods_Assignment_2_Bubble_Game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment_2_Bubble_Game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +129,7 @@
 				D8450B041EC6829C000468C7 /* LaunchScreen.storyboard */,
 				D8450B071EC6829C000468C7 /* Info.plist */,
 				D8450B1A1EC6ED8A000468C7 /* GoogleService-Info.plist */,
+				D847F6DB1EC8A31600084B2A /* pop.wav */,
 			);
 			path = "Assignment 2 Bubble Game";
 			sourceTree = "<group>";
@@ -143,7 +144,6 @@
 		D8450B131EC684C8000468C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D8450AFB1EC6829C000468C7 /* GameScene.swift */,
 				D8450AF71EC6829C000468C7 /* GameScene.sks */,
 				D8450B1C1EC6F1F9000468C7 /* TextViewCustomField.swift */,
 				D8450B211EC6F428000468C7 /* ShadowView.swift */,
@@ -151,7 +151,6 @@
 				D8450B251EC6F48C000468C7 /* RoundButton.swift */,
 				D8450B271EC6F563000468C7 /* ButtonCustomView.swift */,
 				D847F6D51EC87FC100084B2A /* CustomSlider.swift */,
-				D847F6D91EC89ACB00084B2A /* BubbleGameScene.sks */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -160,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				D8450AFD1EC6829C000468C7 /* GameViewController.swift */,
+				D8450AFB1EC6829C000468C7 /* GameScene.swift */,
 				D8450B0D1EC683DA000468C7 /* HomeScreenVC.swift */,
 				D81FA6711EC7E91D00490CDE /* PlayersScoreVC.swift */,
 				D8523C081EC7F0BA001CCCA6 /* BestScoreCell.swift */,
@@ -258,10 +258,10 @@
 			files = (
 				D8450B011EC6829C000468C7 /* Main.storyboard in Resources */,
 				D8450AF81EC6829C000468C7 /* GameScene.sks in Resources */,
+				D847F6DC1EC8A31600084B2A /* pop.wav in Resources */,
 				D8450B031EC6829C000468C7 /* Assets.xcassets in Resources */,
 				D8450B061EC6829C000468C7 /* LaunchScreen.storyboard in Resources */,
 				D8450AFA1EC6829C000468C7 /* Actions.sks in Resources */,
-				D847F6DA1EC89ACB00084B2A /* BubbleGameScene.sks in Resources */,
 				D8450B1B1EC6ED8A000468C7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,7 +22,8 @@ class GameViewController: UIViewController {
             if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                
+				
+				scene.backgroundColor = UIColor(red:0.01, green:0.66, blue:0.96, alpha: 1)
                 // Present the scene
                 view.presentScene(scene)
             }
@@ -33,5 +34,9 @@ class GameViewController: UIViewController {
             view.showsNodeCount = true
         }
     }
+	
+	override var prefersStatusBarHidden: Bool {
+		return true
+	}
 
 }
