@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import SceneKit
+import SpriteKit
+import GameplayKit
 
 class MenuVC: UIViewController {
+	//var currentGame: GameScene!
 
+	@IBOutlet var mainSKView: SKView!
     override func viewDidLoad() {
         super.viewDidLoad()
-		
     }
-
 	
 	@IBAction func startButtonTapped(_ sender: Any) {
-		
+
 	}
 
 	@IBAction func topPlayersButtonTapped(_ sender: Any) {

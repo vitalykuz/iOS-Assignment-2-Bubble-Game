@@ -9,7 +9,19 @@
 import SpriteKit
 import GameplayKit
 
+struct GameValues {
+	static var score: Double = 0;
+	static var bestScore: Double = 0;
+	static var userName: String = "";
+	static var gameSeconds: Int! = 60
+	static var timerCount: Int = 10
+	static var maxNumberOfBubbles: Int = 15
+}
+
+
 class GameScene: SKScene {
+	
+	weak var viewController: MenuVC!
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
