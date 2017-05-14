@@ -18,5 +18,5 @@ let KEY_UID = "uid"
 // view
 let MENU_VC = "toMenuVC"
 let START_GAME_VC = "toStartGameVC"
-let TOP_PLAYERS_VC = "toTopPlayers"
+let TOP_PLAYERS_VC = "toTopPlayersVC"
 let SETTINGS_VC = "toSettingsVC"

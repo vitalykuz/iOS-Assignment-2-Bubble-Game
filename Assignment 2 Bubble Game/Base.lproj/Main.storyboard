@@ -211,6 +211,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="topPlayersButtonTapped:" destination="6QQ-FM-CT3" eventType="touchUpInside" id="QTC-Md-5oU"/>
+                                                    <segue destination="2dW-tl-DPj" kind="show" identifier="toTopPlayersVC" id="Oxa-lP-Khc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BU2-eD-U1K" customClass="ButtonCustoomView" customModule="Assignment_2_Bubble_Game" customModuleProvider="target">
@@ -224,6 +225,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="settingsButtonTapped:" destination="6QQ-FM-CT3" eventType="touchUpInside" id="AJj-EP-LVd"/>
+                                                    <segue destination="pga-b6-Cwx" kind="show" identifier="toSettingsVC" id="Gng-85-Y5K"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -237,6 +239,9 @@
                                         <state key="normal" backgroundImage="Logout">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="neh-7U-ko0" kind="show" identifier="toHomeVC" id="jmL-iM-xyD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -285,6 +290,9 @@
                                 <state key="normal" backgroundImage="Done">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="6QQ-FM-CT3" kind="show" identifier="toMenuVC" id="8UA-Dt-BCp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -313,6 +321,9 @@
                                 <state key="normal" backgroundImage="Done">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="6QQ-FM-CT3" kind="show" identifier="toMenuVC" id="isi-Fn-TFS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -345,6 +356,7 @@
                                         <state key="normal" image="sign-out"/>
                                         <connections>
                                             <action selector="goBackTaped:" destination="2dW-tl-DPj" eventType="touchUpInside" id="Pzc-2M-yCn"/>
+                                            <segue destination="neh-7U-ko0" kind="show" identifier="toHomeVC" id="tDs-rw-LIk"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -440,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7A-o6-FxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1815" y="-680"/>
+            <point key="canvasLocation" x="780" y="-659"/>
         </scene>
     </scenes>
     <resources>
@@ -454,4 +466,8 @@
         <image name="logo2" width="547" height="129"/>
         <image name="sign-out" width="92" height="65"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="isi-Fn-TFS"/>
+        <segue reference="tDs-rw-LIk"/>
+    </inferredMetricsTieBreakers>
 </document>

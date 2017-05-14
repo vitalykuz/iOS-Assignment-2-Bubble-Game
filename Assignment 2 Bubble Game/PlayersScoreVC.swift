@@ -23,7 +23,7 @@ class PlayersScorVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 		scoreTableView.dataSource = self
 		
 		
-		//self.fetchUser()
+		self.fetchUser()
     }
 	
 	func fetchUser() {
