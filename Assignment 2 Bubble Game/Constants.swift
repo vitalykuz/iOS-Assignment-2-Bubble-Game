@@ -14,3 +14,6 @@ let SHADOW_GRAY: CGFloat = 120.0 / 255.0
 
 //user id
 let KEY_UID = "uid"
+
+// view
+let MENU_VC = "toMenuVC"

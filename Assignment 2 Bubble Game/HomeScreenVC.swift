@@ -29,7 +29,7 @@ class HomeScreenVC: UIViewController, UITextFieldDelegate {
 		//checks if i got the uid in key chain
 		if KeychainWrapper.standard.string(forKey: KEY_UID) != nil {
 			print("Vitaly: User ID is in key chain")
-			performSegue(withIdentifier: "toBestScoreVC", sender: nil)
+			performSegue(withIdentifier: MENU_VC, sender: nil)
 		}
 	}
 	
@@ -74,7 +74,7 @@ class HomeScreenVC: UIViewController, UITextFieldDelegate {
 	func saveUserIdToKeyChain(id: String, userData: Dictionary<String, Any>) {
 		DataService.dataService.createFirebaseDBUser(uid: id, userData: userData)
 		KeychainWrapper.standard.set(id, forKey: KEY_UID)
-		performSegue(withIdentifier: "toBestScoreVC", sender: nil)
+		performSegue(withIdentifier: MENU_VC, sender: nil)
 	}
 	
 	

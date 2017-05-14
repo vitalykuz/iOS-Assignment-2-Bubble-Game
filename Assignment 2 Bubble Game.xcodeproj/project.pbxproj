@@ -19,7 +19,6 @@
 		D8450B031EC6829C000468C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8450B021EC6829C000468C7 /* Assets.xcassets */; };
 		D8450B061EC6829C000468C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8450B041EC6829C000468C7 /* LaunchScreen.storyboard */; };
 		D8450B0E1EC683DA000468C7 /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B0D1EC683DA000468C7 /* HomeScreenVC.swift */; };
-		D8450B191EC6878A000468C7 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B181EC6878A000468C7 /* MenuVC.swift */; };
 		D8450B1B1EC6ED8A000468C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8450B1A1EC6ED8A000468C7 /* GoogleService-Info.plist */; };
 		D8450B1D1EC6F1F9000468C7 /* TextViewCustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B1C1EC6F1F9000468C7 /* TextViewCustomField.swift */; };
 		D8450B201EC6F2A8000468C7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450B1F1EC6F2A8000468C7 /* Constants.swift */; };
@@ -46,7 +45,6 @@
 		D8450B051EC6829C000468C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8450B071EC6829C000468C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8450B0D1EC683DA000468C7 /* HomeScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
-		D8450B181EC6878A000468C7 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		D8450B1A1EC6ED8A000468C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8450B1C1EC6F1F9000468C7 /* TextViewCustomField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewCustomField.swift; sourceTree = "<group>"; };
 		D8450B1F1EC6F2A8000468C7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 			children = (
 				D8450AFD1EC6829C000468C7 /* GameViewController.swift */,
 				D8450B0D1EC683DA000468C7 /* HomeScreenVC.swift */,
-				D8450B181EC6878A000468C7 /* MenuVC.swift */,
 				D81FA6711EC7E91D00490CDE /* PlayersScoreVC.swift */,
 				D8523C081EC7F0BA001CCCA6 /* BestScoreCell.swift */,
 			);
@@ -323,7 +320,6 @@
 				D8450B221EC6F428000468C7 /* ShadowView.swift in Sources */,
 				D8450B261EC6F48C000468C7 /* RoundButton.swift in Sources */,
 				D8450B201EC6F2A8000468C7 /* Constants.swift in Sources */,
-				D8450B191EC6878A000468C7 /* MenuVC.swift in Sources */,
 				D8450B1D1EC6F1F9000468C7 /* TextViewCustomField.swift in Sources */,
 				D8523C091EC7F0BA001CCCA6 /* BestScoreCell.swift in Sources */,
 			);

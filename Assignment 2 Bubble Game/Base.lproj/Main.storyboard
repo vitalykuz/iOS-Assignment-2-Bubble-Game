@@ -22,73 +22,239 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zbI-Fm-DDg">
-                                <rect key="frame" x="24" y="200" width="272" height="210"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uX4-SL-yR0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name (nickname)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5a5-3B-HMg" customClass="TextFieldCustomView" customModule="Assignment_2_Bubble_Game" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="272" height="45"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zbI-Fm-DDg">
+                                        <rect key="frame" x="8" y="223" width="304" height="210"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5a5-3B-HMg" customClass="TextFieldCustomView" customModule="Assignment_2_Bubble_Game" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="45"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="11O-jn-o1G"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EZi-i1-c9m" customClass="TextFieldCustomView" customModule="Assignment_2_Bubble_Game" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="55" width="304" height="45"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="p3Q-Vi-6IZ"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ng-UY-aYF" customClass="TextFieldCustomView" customModule="Assignment_2_Bubble_Game" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="110" width="304" height="45"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="TG1-8N-IzB"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT1-1O-kTV" customClass="ButtonCustoomView" customModule="Assignment_2_Bubble_Game" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="165" width="304" height="45"/>
+                                                <color key="backgroundColor" red="0.011764705882352941" green="0.60784313725490191" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="24m-YW-6CC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                                <state key="normal" title="Sign In">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="logInButtontapped:" destination="neh-7U-ko0" eventType="touchUpInside" id="MYv-Vd-wYD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ja1-nW-6f7" userLabel="Footer View">
+                                        <rect key="frame" x="0.0" y="503" width="320" height="65"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If you have not signed up before, an account will be created automatically for you " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lr-g4-sn1">
+                                                <rect key="frame" x="8" y="8" width="304" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buble-footer" translatesAutoresizingMaskIntoConstraints="NO" id="8bK-tl-myZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="LgU-VO-mPN"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.88235294117647056" green="0.96078431372549022" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="11O-jn-o1G"/>
+                                            <constraint firstAttribute="trailing" secondItem="8bK-tl-myZ" secondAttribute="trailing" id="PeB-fY-FKu"/>
+                                            <constraint firstAttribute="height" constant="65" id="ac0-6q-EBH"/>
+                                            <constraint firstItem="8bK-tl-myZ" firstAttribute="leading" secondItem="ja1-nW-6f7" secondAttribute="leading" id="jMB-nn-usU"/>
+                                            <constraint firstAttribute="bottom" secondItem="8bK-tl-myZ" secondAttribute="bottom" id="qxO-vf-lD3"/>
                                         </constraints>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EZi-i1-c9m" customClass="TextFieldCustomView" customModule="Assignment_2_Bubble_Game" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55" width="272" height="45"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Zd-bR-nft" userLabel="Logo View">
+                                        <rect key="frame" x="0.0" y="30" width="320" height="160"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="V12-aQ-gTN">
+                                                <rect key="frame" x="8" y="8" width="304" height="130"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="130" id="3BA-80-ZON"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubles-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ao9-4H-xWJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="p3Q-Vi-6IZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="V12-aQ-gTN" secondAttribute="trailing" constant="8" id="ErY-VN-4jm"/>
+                                            <constraint firstItem="Ao9-4H-xWJ" firstAttribute="leading" secondItem="3Zd-bR-nft" secondAttribute="leading" id="Wgx-rD-jkn"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ao9-4H-xWJ" secondAttribute="trailing" id="cHv-vW-RPd"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ao9-4H-xWJ" secondAttribute="bottom" id="iPG-ww-n1H"/>
+                                            <constraint firstItem="V12-aQ-gTN" firstAttribute="leading" secondItem="3Zd-bR-nft" secondAttribute="leading" constant="8" id="nft-iE-omm"/>
+                                            <constraint firstAttribute="height" constant="160" id="oWI-PX-PU6"/>
+                                            <constraint firstItem="Ao9-4H-xWJ" firstAttribute="top" secondItem="3Zd-bR-nft" secondAttribute="top" id="qN7-q3-7Gi"/>
+                                            <constraint firstItem="V12-aQ-gTN" firstAttribute="top" secondItem="3Zd-bR-nft" secondAttribute="top" constant="8" id="vwM-8k-Aj3"/>
                                         </constraints>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ng-UY-aYF" customClass="TextFieldCustomView" customModule="Assignment_2_Bubble_Game" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="110" width="272" height="45"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="TG1-8N-IzB"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT1-1O-kTV" customClass="ButtonCustoomView" customModule="Assignment_2_Bubble_Game" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="165" width="272" height="45"/>
-                                        <color key="backgroundColor" red="0.011764705882352941" green="0.60784313725490191" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="24m-YW-6CC"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
-                                        <state key="normal" title="Log In">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="logInButtontapped:" destination="neh-7U-ko0" eventType="touchUpInside" id="MYv-Vd-wYD"/>
-                                        </connections>
-                                    </button>
+                                    </view>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="3Zd-bR-nft" firstAttribute="leading" secondItem="uX4-SL-yR0" secondAttribute="leading" id="9HV-YW-Loo"/>
+                                    <constraint firstItem="zbI-Fm-DDg" firstAttribute="leading" secondItem="uX4-SL-yR0" secondAttribute="leading" constant="8" id="AQe-8b-76s"/>
+                                    <constraint firstItem="ja1-nW-6f7" firstAttribute="top" secondItem="zbI-Fm-DDg" secondAttribute="bottom" constant="70" id="Edf-zP-apo"/>
+                                    <constraint firstAttribute="trailing" secondItem="zbI-Fm-DDg" secondAttribute="trailing" constant="8" id="HaV-ya-8qc"/>
+                                    <constraint firstAttribute="bottom" secondItem="ja1-nW-6f7" secondAttribute="bottom" id="Lmq-17-4C2"/>
+                                    <constraint firstAttribute="trailing" secondItem="ja1-nW-6f7" secondAttribute="trailing" id="P5X-cW-m7i"/>
+                                    <constraint firstItem="3Zd-bR-nft" firstAttribute="top" secondItem="uX4-SL-yR0" secondAttribute="top" constant="30" id="Whz-XO-QLr"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Zd-bR-nft" secondAttribute="trailing" id="e6Y-IS-qwZ"/>
+                                    <constraint firstItem="ja1-nW-6f7" firstAttribute="leading" secondItem="uX4-SL-yR0" secondAttribute="leading" id="tFv-6d-TP3"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="zbI-Fm-DDg" secondAttribute="trailing" constant="8" id="MgX-f5-BDH"/>
-                            <constraint firstItem="zbI-Fm-DDg" firstAttribute="top" secondItem="Oci-yb-ad2" secondAttribute="bottom" constant="180" id="UjA-gQ-6qa"/>
-                            <constraint firstItem="zbI-Fm-DDg" firstAttribute="leading" secondItem="mma-FB-1Gh" secondAttribute="leadingMargin" constant="8" id="W4O-hk-juF"/>
+                            <constraint firstItem="Ots-Rc-0wq" firstAttribute="top" secondItem="uX4-SL-yR0" secondAttribute="bottom" id="7we-Ut-Vu7"/>
+                            <constraint firstItem="uX4-SL-yR0" firstAttribute="top" secondItem="mma-FB-1Gh" secondAttribute="top" id="daT-0W-JJQ"/>
+                            <constraint firstAttribute="trailing" secondItem="uX4-SL-yR0" secondAttribute="trailing" id="ftF-6v-GVi"/>
+                            <constraint firstItem="uX4-SL-yR0" firstAttribute="leading" secondItem="mma-FB-1Gh" secondAttribute="leading" id="jmy-AO-DTU"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailLabel" destination="EZi-i1-c9m" id="NEH-t0-mHd"/>
                         <outlet property="nameLabel" destination="5a5-3B-HMg" id="P9E-tl-WBr"/>
                         <outlet property="passwordLabel" destination="2Ng-UY-aYF" id="fUS-wn-C2v"/>
-                        <segue destination="2dW-tl-DPj" kind="show" identifier="toBestScoreVC" id="rZX-aL-FaO"/>
+                        <segue destination="6QQ-FM-CT3" kind="show" identifier="toMenuVC" id="Zx6-JO-Hve"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfd-Ja-zhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="160.80000000000001" y="123.68815592203899"/>
+            <point key="canvasLocation" x="159.375" y="123.59154929577466"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lsk-Pr-iou">
+            <objects>
+                <viewController id="6QQ-FM-CT3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u1s-f4-YeW"/>
+                        <viewControllerLayoutGuide type="bottom" id="vrS-4b-zWI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iuU-tF-H0Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XkK-wE-Ef6">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYc-pa-DaG">
+                                        <rect key="frame" x="0.0" y="55" width="320" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="JOn-zF-cB7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="50"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="24C-l2-4Up">
+                                        <rect key="frame" x="8" y="160" width="304" height="235"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48W-Ak-CU1" customClass="ButtonCustoomView" customModule="Assignment_2_Bubble_Game" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="65"/>
+                                                <color key="backgroundColor" red="0.0" green="0.56862745098039214" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="rRZ-Be-nZZ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" backgroundImage="StartGameButton">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJg-NM-I2W" customClass="ButtonCustoomView" customModule="Assignment_2_Bubble_Game" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="85" width="304" height="65"/>
+                                                <color key="backgroundColor" red="0.0" green="0.56862745100000001" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="D0n-jB-5k9"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Top-Players">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BU2-eD-U1K" customClass="ButtonCustoomView" customModule="Assignment_2_Bubble_Game" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="170" width="304" height="65"/>
+                                                <color key="backgroundColor" red="0.0" green="0.56862745100000001" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="65" id="uHW-fO-HcF"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="Settings">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLB-Bm-cAf" customClass="ButtonCustoomView" customModule="Assignment_2_Bubble_Game" customModuleProvider="target">
+                                        <rect key="frame" x="55" y="503" width="210" height="45"/>
+                                        <color key="backgroundColor" red="0.0" green="0.56862745100000001" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Krz-oC-NnU"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Logout">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="fYc-pa-DaG" firstAttribute="leading" secondItem="XkK-wE-Ef6" secondAttribute="leading" id="61e-h8-NV3"/>
+                                    <constraint firstAttribute="trailing" secondItem="fYc-pa-DaG" secondAttribute="trailing" id="75o-aN-WRf"/>
+                                    <constraint firstItem="xLB-Bm-cAf" firstAttribute="leading" secondItem="XkK-wE-Ef6" secondAttribute="leading" constant="55" id="7hT-Le-b8D"/>
+                                    <constraint firstItem="fYc-pa-DaG" firstAttribute="top" secondItem="XkK-wE-Ef6" secondAttribute="top" constant="55" id="AxU-51-hgS"/>
+                                    <constraint firstAttribute="trailing" secondItem="24C-l2-4Up" secondAttribute="trailing" constant="8" id="COL-EV-M0t"/>
+                                    <constraint firstAttribute="bottom" secondItem="xLB-Bm-cAf" secondAttribute="bottom" constant="20" id="FIO-wh-CtK"/>
+                                    <constraint firstItem="24C-l2-4Up" firstAttribute="leading" secondItem="XkK-wE-Ef6" secondAttribute="leading" constant="8" id="hvT-Zo-Ail"/>
+                                    <constraint firstAttribute="trailing" secondItem="xLB-Bm-cAf" secondAttribute="trailing" constant="55" id="wri-c5-7Hw"/>
+                                    <constraint firstItem="24C-l2-4Up" firstAttribute="top" secondItem="fYc-pa-DaG" secondAttribute="bottom" constant="35" id="xLE-a3-gn2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XkK-wE-Ef6" firstAttribute="top" secondItem="iuU-tF-H0Z" secondAttribute="top" id="WHL-bl-ikg"/>
+                            <constraint firstItem="XkK-wE-Ef6" firstAttribute="leading" secondItem="iuU-tF-H0Z" secondAttribute="leading" id="c7q-VB-DCz"/>
+                            <constraint firstAttribute="trailing" secondItem="XkK-wE-Ef6" secondAttribute="trailing" id="nDL-ld-jyy"/>
+                            <constraint firstItem="vrS-4b-zWI" firstAttribute="top" secondItem="XkK-wE-Ef6" secondAttribute="bottom" id="tPy-KN-ovK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9l-7s-hj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905.625" y="123.59154929577466"/>
         </scene>
         <!--Players ScorVC-->
         <scene sceneID="nxP-An-nI7">
@@ -136,16 +302,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4AE-7H-DMy">
-                                                    <rect key="frame" x="16" y="16" width="288" height="28.5"/>
+                                                    <rect key="frame" x="16" y="16" width="382" height="28"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Vitaly" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMa-p9-1l1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="228.5" height="28.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="322.5" height="28"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70425" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuh-ka-8YM">
-                                                            <rect key="frame" x="228.5" y="0.0" width="59.5" height="28.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70425" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuh-ka-8YM">
+                                                            <rect key="frame" x="322.5" y="0.0" width="59.5" height="28"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -204,69 +370,21 @@
                     </view>
                     <connections>
                         <outlet property="scoreTableView" destination="IYG-zy-EjV" id="Tsu-Lh-T3b"/>
-                        <segue destination="neh-7U-ko0" kind="show" identifier="toHomeVC" id="Y4A-0C-09n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7A-o6-FxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1147.5" y="123.59154929577466"/>
-        </scene>
-        <!--MenuVC-->
-        <scene sceneID="pgJ-or-JRG">
-            <objects>
-                <viewController id="FJ7-uO-76H" customClass="MenuVC" customModule="Assignment_2_Bubble_Game" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Jz2-1p-rzz"/>
-                        <viewControllerLayoutGuide type="bottom" id="Jjg-ve-o97"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vvI-ty-5hh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXd-ZG-f3a">
-                                <rect key="frame" x="125" y="313" width="125" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="goBackTaped:" destination="FJ7-uO-76H" eventType="touchUpInside" id="RHS-Ab-Thf"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wNq-HH-F1e">
-                                <rect key="frame" x="139" y="68" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Best score" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xHE-gj-nSN">
-                                <rect key="frame" x="139" y="134" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="High score" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jx1-kv-3jm">
-                                <rect key="frame" x="139" y="202" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="bestScoreLabel" destination="xHE-gj-nSN" id="NrJ-nY-nO0"/>
-                        <outlet property="highScoreLabel" destination="Jx1-kv-3jm" id="cTz-gv-WEN"/>
-                        <outlet property="nameLabel" destination="wNq-HH-F1e" id="dVr-Cb-Cd2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UrZ-go-UdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="994" y="-722"/>
+            <point key="canvasLocation" x="1013" y="-762"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Logout" width="242" height="124"/>
+        <image name="Settings" width="324" height="124"/>
+        <image name="StartGameButton" width="473" height="107"/>
+        <image name="Top-Players" width="432" height="130"/>
+        <image name="buble-footer" width="1024" height="768"/>
+        <image name="bubles-logo" width="400" height="366"/>
+        <image name="logo2" width="547" height="129"/>
         <image name="sign-out" width="92" height="65"/>
     </resources>
 </document>
