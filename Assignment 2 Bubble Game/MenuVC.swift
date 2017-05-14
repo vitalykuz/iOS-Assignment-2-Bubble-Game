@@ -12,6 +12,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseCore
 import FirebaseDatabase
+import SwiftKeychainWrapper
 
 
 class MenuVC: UIViewController {
@@ -19,16 +20,56 @@ class MenuVC: UIViewController {
 	@IBOutlet var bestScoreLabel: UITextField!
 	@IBOutlet var highScoreLabel: UITextField!
 	
-	var nameFromHome = ""
-
+	var bestScore = 18
+	
     override func viewDidLoad() {
-        super.viewDidLoad()	
-
-		print("Name in Menu: \(nameFromHome)")
+        super.viewDidLoad()
         // Do any additional setup after loading the view.
-		nameLabel.text = nameFromHome
-
+		
+		self.updateBestScore()
+		
+//		DataService.dataService.REF_USERS.observe(.value, with: { (snapshot) in
+//			if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+//				for snap in snapshot {
+//					print("Snap: \(snap)")
+//					if var dict = snap.value as? Dictionary<String, Any> {
+//						//dict["bestSCore"] = self.bestScore
+//					}
+//				}
+//			}
+//		})
+//
+//		
+//		let users = DataService.dataService.REF_USERS
+//		let query = users.queryOrdered(byChild: "bestScore")
+//		query.observeSingleEvent(of: .value, with: { (snapshot) in
+//			let bestScore = snapshot.childSnapshot(forPath: "bestScore").value as! Int
+//			print("Best score \(bestScore)")
+//			//let newAmount = cardAmount + 31
+//			users.updateChildValues(["bestScore": self.bestScore])/*<------ CRITICAL*/
+//		})
+		
    }
+	
+	func updateBestScore() {
+		let uid = FIRAuth.auth()?.currentUser?.uid
+		
+		//DataService.dataService.updateBestScoreInDB(uid: uid!, userData: ["bestScore": self.bestScore])
+		
+		
+		DataService.dataService.REF_BASE.observeSingleEvent(of: .value, with: { snapshot in
+			
+			if !snapshot.exists() { return }
+			
+			//print(snapshot)
+
+			let topScore = snapshot.childSnapshot(forPath: "bestScore").value as! Int
+			print("Best Score of all \(topScore)")
+			
+		})
+		
+		
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -36,16 +77,11 @@ class MenuVC: UIViewController {
     }
 	
 	@IBAction func goBackTaped(_ sender: Any) {
-		
+		KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+		try! FIRAuth.auth()?.signOut()
+		performSegue(withIdentifier: "toHomeVC", sender: nil)
 	}
 	
 	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "toHomeVC" {
-			if segue.destination is HomeScreenVC {
-			}
-		}
-		
-	}
-	
+
 }
