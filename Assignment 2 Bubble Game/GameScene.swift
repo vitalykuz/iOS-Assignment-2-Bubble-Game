@@ -22,8 +22,6 @@ struct GameValues {
 
 class GameScene: SKScene {
 	
-	weak var viewController: MenuVC!
-	
 	//keeps the list of all bubbles images (textures) I have in assests folder
 	var bubbleTextures = [SKTexture]()
 	
@@ -69,6 +67,7 @@ class GameScene: SKScene {
 	}
 	
 	func updateTimer() {
+		print("Vitaly: I a in update timer :(")
 		if (GameValues.timerCount == 0) {
 			gameOver()
 			return
@@ -89,7 +88,6 @@ class GameScene: SKScene {
 	func removeBubbleFromScreen() {
 		
 		let diceRoll = Int(arc4random_uniform(UInt32(bubbles.count)))
-		print("Random number of bubbles to remove: \(diceRoll)")
 		for _ in 0...diceRoll {
 			if(bubbles.count > 0) {
 				let randomIndex = Int(arc4random_uniform(UInt32(bubbles.count - 1)))
@@ -104,61 +102,35 @@ class GameScene: SKScene {
 	}
 	
 	func createRandomBubbles(maxNumberOfBubbles: Int) {
-		
 		let diceRoll = Int(arc4random_uniform(UInt32(maxNumberOfBubbles - bubbles.count)))
-		print("How many bubbles to create? \(diceRoll)")
 		for _ in 0...diceRoll {
 			generateBubbleWithProbability()
-			print("Bubble created")
 		}
-		
-		
 	}
 	
 	func gameOver() {
 		timer.invalidate()
-		
-		if let view = self.view {
-			// Load the SKScene from 'GameScene.sks'
-			if let scene = SKScene(fileNamed: "GameOverScene") {
-				// Set the scale mode to scale to fit the window
-				scene.scaleMode = .aspectFill
-				
-				//gameOverScene = scene as! GameOverScene
-				
-				
-				// Present the scene
-				view.presentScene(scene)
-			}
-			
-			view.ignoresSiblingOrder = true
-		}
+		NotificationCenter.default.post(name: NSNotification.Name(rawValue: "segueToGameOverScene"), object: nil)
 	}
 	
 	func createLabels() {
 		
 		timerLabel = self.childNode(withName: "timerLabel") as? SKLabelNode
 		timerLabel?.text = "Timer: \(GameValues.timerCount)"
-
 		
 		//creates a score label
 		scoreLabel = self.childNode(withName: "scoreLabel") as? SKLabelNode
 		scoreLabel?.text = "Score: \(GameValues.score)"
-		//scoreLabel?.fontColor = SKColor.green
 		
 		highScoreLabel = self.childNode(withName: "highScoreLabel") as? SKLabelNode
-		highScoreLabel?.fontName = "Avenir Next"
-		highScoreLabel?.fontSize = 52
 		highScoreLabel?.text = "High Score: \(GameValues.bestScore)"
 	}
 	
 	func createBubble(with index: Int) {
-		//print("I am in create bubble")
 		
 		// 1. create a new Sprite node from the array of all images (textures)
 		let bubble = SKSpriteNode(texture: bubbleTextures[index])
 		bubble.name = String(index)
-		//print("Bubble name: \(bubble.name)")
 		
 		// 3. give it the position of z = 1, so that it appears above any background
 		bubble.zPosition = 1
@@ -169,8 +141,8 @@ class GameScene: SKScene {
 		bubbles.append(bubble)
 		
 		// 8. make it appear somewhere randomly inside the game screen
-		let xPosition = GKARC4RandomSource.sharedRandom().nextInt(upperBound: 750)
-		let yPosition = GKARC4RandomSource.sharedRandom().nextInt(upperBound: 1334)
+		let xPosition = GKARC4RandomSource.sharedRandom().nextInt(upperBound: 800)
+		let yPosition = GKARC4RandomSource.sharedRandom().nextInt(upperBound: 1300)
 		
 		bubble.position = CGPoint(x: xPosition, y: yPosition)
 		
@@ -184,7 +156,6 @@ class GameScene: SKScene {
 	}
 	
 	func configurePhysics(for bubble: SKSpriteNode) {
-		//print("I am in configu physics")
 		
 		bubble.physicsBody = SKPhysicsBody(circleOfRadius: bubble.size.width / 2)
 		bubble.physicsBody?.linearDamping = 0.0
@@ -234,6 +205,9 @@ class GameScene: SKScene {
 		{
 			if name == "timerLabel" || name == "scoreLabel" || name == "highScoreLabel"
 			{
+				//timerLabel?.isUserInteractionEnabled = false
+				//scoreLabel?.isUserInteractionEnabled = false
+				//highScoreLabel?.isUserInteractionEnabled = false
 				touchedNode.isUserInteractionEnabled = false
 			} else {
 				pop(touchedNode as! SKSpriteNode)

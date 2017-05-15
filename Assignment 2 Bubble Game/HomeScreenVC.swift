@@ -28,7 +28,6 @@ class HomeScreenVC: UIViewController, UITextFieldDelegate {
 	override func viewDidAppear(_ animated: Bool) {
 		//checks if i got the uid in key chain
 		if KeychainWrapper.standard.string(forKey: KEY_UID) != nil {
-			print("Vitaly: User ID is in key chain")
 			performSegue(withIdentifier: MENU_VC, sender: nil)
 		}
 	}

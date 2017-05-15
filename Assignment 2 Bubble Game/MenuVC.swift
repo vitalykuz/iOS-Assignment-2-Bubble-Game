@@ -12,7 +12,6 @@ import SpriteKit
 import GameplayKit
 
 class MenuVC: UIViewController {
-	//var currentGame: GameScene!
 
 	@IBOutlet var mainSKView: SKView!
     override func viewDidLoad() {
