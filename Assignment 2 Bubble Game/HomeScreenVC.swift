@@ -59,7 +59,7 @@ class HomeScreenVC: UIViewController, UITextFieldDelegate {
 							} else {
 								print("Vitaly: User created")
 								if let user = user {
-									let userData = ["email" : user.email!, "bestScore" : 0, "name" : self.nameLabel.text!] as [String : Any]
+									let userData = ["email" : user.email!, "bestScore" : 0.0, "name" : self.nameLabel.text!] as [String : Any]
 									self.saveUserIdToKeyChain(id: user.uid, userData: userData )
 								}
 							}

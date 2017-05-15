@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
 	@IBOutlet var countImage: UIImageView!
 	var timer: Timer!
 	var count: Int = 3
+	@IBOutlet var backgroundView: UIView!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class GameViewController: UIViewController {
 		case 0:
 			timer.invalidate()
 			countImage.isHidden = true
+			backgroundView.isHidden = true
 			startGame()
 		default: break
 		}

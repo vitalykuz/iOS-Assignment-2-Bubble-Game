@@ -10,6 +10,8 @@ import UIKit
 import SceneKit
 import SpriteKit
 import GameplayKit
+import SwiftKeychainWrapper
+import Firebase
 
 class MenuVC: UIViewController {
 
@@ -28,6 +30,13 @@ class MenuVC: UIViewController {
 	
 	@IBAction func settingsButtonTapped(_ sender: Any) {
 		
+	}
+	@IBAction func logoutButtonTapped(_ sender: Any) {
+		KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+		try! FIRAuth.auth()?.signOut()
+		GameValues.bestScore = 0.0
+		GameValues.timerCount = 10
+		performSegue(withIdentifier: "toHomeVC", sender: nil)
 	}
 	
 }

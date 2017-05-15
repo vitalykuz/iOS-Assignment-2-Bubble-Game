@@ -58,6 +58,10 @@ class GameScene: SKScene {
 		
 		print("Vitaly: Number of bubbles Settings \(GameValues.maxNumberOfBubbles)")
 		print("Vitaly: Game Seconds \(GameValues.timerCount)")
+		print("Vitaly: Best Score \(GameValues.bestScore)")
+		print("Vitaly: Score \(GameValues.score)")
+		//GameValues.bestScore = 0.0
+		GameValues.score = 0.0
 		
 		createRandomBubbles(maxNumberOfBubbles: GameValues.maxNumberOfBubbles)
 		
@@ -67,14 +71,9 @@ class GameScene: SKScene {
 	}
 	
 	func updateTimer() {
-		print("Vitaly: I a in update timer :(")
 		if (GameValues.timerCount == 0) {
 			gameOver()
 			return
-		}
-		
-		if (GameValues.score >= GameValues.bestScore) {
-			highScoreLabel?.text = "High Score: \(GameValues.score)"
 		}
 		
 		GameValues.timerCount -= 1
@@ -257,7 +256,13 @@ class GameScene: SKScene {
 			calculateCombo(node)
 			GameValues.score += 10 * comboMultiplication
 		}
+		
 		scoreLabel?.text = "Score: \(GameValues.score)"
+		//check if the current score > best score
+		if (GameValues.score >= GameValues.bestScore) {
+			GameValues.bestScore = GameValues.score
+			highScoreLabel?.text = "High Score: \(GameValues.score)"
+		}
 	}
 	
 	func calculateCombo(_ node: SKSpriteNode) {

@@ -22,15 +22,21 @@ class PlayersScorVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 		scoreTableView.delegate = self
 		scoreTableView.dataSource = self
 		
-		
 		self.fetchUser()
-    }
+	}
 	
 	func fetchUser() {
 		FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
 			
 			if let dictionary = snapshot.value as? [String: AnyObject] {
+				//print("Vitaly: \(snapshot.value)")
+				
 				let user = User(dictionary: dictionary)
+				
+				GameValues.bestScore = user.bestScore!
+				//print("Game values: \(GameValues.bestScore)")
+				//print("User best score: \(user.bestScore)")
+				
 				self.users.append(user)
 				self.users.sort(by: {$0.bestScore! > $1.bestScore!})
 				
@@ -43,7 +49,7 @@ class PlayersScorVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 			
 		}, withCancel: nil)
 	}
-
+	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
@@ -65,6 +71,8 @@ class PlayersScorVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 	@IBAction func goBackTaped(_ sender: Any) {
 		KeychainWrapper.standard.removeObject(forKey: KEY_UID)
 		try! FIRAuth.auth()?.signOut()
+		GameValues.bestScore = 0.0
+		GameValues.timerCount = 10
 		performSegue(withIdentifier: "toHomeVC", sender: nil)
 	}
 	

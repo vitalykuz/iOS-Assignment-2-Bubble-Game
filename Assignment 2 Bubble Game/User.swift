@@ -12,11 +12,11 @@ public class User: NSObject {
 	
 	var name: String?
 	var email: String?
-	var bestScore: Int?
+	var bestScore: Double?
 	
 	init(dictionary: [String: Any]) {
 		self.name = dictionary["name"] as? String ?? ""
 		self.email = dictionary["email"] as? String ?? ""
-		self.bestScore = dictionary["bestScore"] as? Int ?? 0
+		self.bestScore = dictionary["bestScore"] as? Double ?? 0
 	}
 }
