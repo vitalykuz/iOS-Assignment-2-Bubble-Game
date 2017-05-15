@@ -69,11 +69,11 @@ class PlayersScorVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 	}
 	
 	@IBAction func goBackTaped(_ sender: Any) {
-		KeychainWrapper.standard.removeObject(forKey: KEY_UID)
-		try! FIRAuth.auth()?.signOut()
-		GameValues.bestScore = 0.0
-		GameValues.timerCount = 10
-		performSegue(withIdentifier: "toHomeVC", sender: nil)
+//		KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+//		try! FIRAuth.auth()?.signOut()
+//		GameValues.bestScore = 0.0
+//		GameValues.timerCount = 10
+//		performSegue(withIdentifier: "toHomeVC", sender: nil)
 	}
 	
 }

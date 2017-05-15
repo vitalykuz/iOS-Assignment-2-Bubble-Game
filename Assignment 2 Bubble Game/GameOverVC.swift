@@ -62,6 +62,8 @@ class GameOverVC: UIViewController {
 			if let dictionary = snapshot.value as? [String: AnyObject] {
 				self.currentBestScore = dictionary["bestScore"] as? Double
 				print("Vitaly best score: \(self.currentBestScore)")
+				
+				self.nameLabel.text = dictionary["name"] as? String
 			}
 		})
 	}

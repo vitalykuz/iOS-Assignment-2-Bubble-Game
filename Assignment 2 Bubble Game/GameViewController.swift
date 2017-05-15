@@ -26,6 +26,8 @@ class GameViewController: UIViewController {
 		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
 	
+
+	
 	func updateTimer() {
 		
 		switch count {
@@ -54,15 +56,12 @@ class GameViewController: UIViewController {
 				scene.scaleMode = .aspectFill
 				//scene.scaleMode = .resizeFill
 				
-				scene.backgroundColor = UIColor(red:0.01, green:0.66, blue:0.96, alpha: 1)
+				scene.backgroundColor = UIColor(red:0.94, green:0.60, blue:0.60, alpha:0.7)
 				// Present the scene
 				view.presentScene(scene)
 			}
 			
 			view.ignoresSiblingOrder = true
-			
-			view.showsFPS = true
-			view.showsNodeCount = true
 		}
 	}
 	
