@@ -15,34 +15,32 @@ class GameOverVC: UIViewController {
 	@IBOutlet var nameLabel: UILabel!
 	@IBOutlet var scoreLabel: UILabel!
 	@IBOutlet var bestScoreLabel: UILabel!
-	var currentBestScore: Double! = 0.0
-
-	var gameOverVC: GameOverVC?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
-		scoreLabel.text = "Score: \(GameValues.score)"
-		bestScoreLabel.text = "Best Score: \(GameValues.bestScore)"
-		//print("Best Score: \(GameValues.bestScore)")
-		//print("Score: \(GameValues.score)")
-        // Do any additional setup after loading the view.
 		
 		self.findUser()
+		self.updateDatabase()
 		
-		if (self.currentBestScore <= GameValues.score) {
-			updateDatabase()
+		if (GameValues.bestScore <= GameValues.score) {
+			//rename it
+			self.updateBestScore()
+			
 		}
-		
+			
+		scoreLabel.text = "Score: \(GameValues.score)"
+		bestScoreLabel.text = "Top Score: \(GameValues.bestScore)"
     }
 
 	@IBAction func playAgainButtonClicked(_ sender: Any) {
 		GameValues.timerCount = 10
 		GameValues.score = 0.0
-		GameValues.bestScore = currentBestScore
 	}
 
+	// TO_DO encapsulate the follwoing an a method. CHeck if it actualy works
 	@IBAction func topPlayersButtonTapped(_ sender: Any) {
+		GameValues.timerCount = 10
+		GameValues.score = 0.0
 	}
 	
 	func updateDatabase() {
@@ -52,6 +50,11 @@ class GameOverVC: UIViewController {
 		DataService.dataService.updateBestScoreInDB(uid: userID!, userData: bestScoreDict)
 	}
 	
+	func updateBestScore() {
+		var bestScoreDict = Dictionary<String, Any>()
+		bestScoreDict = ["bestScore": GameValues.score]
+		DataService.dataService.updateBestScore(userData: bestScoreDict)
+	}
 	
 	func findUser() {
 		let ref = DataService.dataService.REF_BASE
@@ -60,13 +63,27 @@ class GameOverVC: UIViewController {
 			//print("Snap: \(snapshot)")
 			
 			if let dictionary = snapshot.value as? [String: AnyObject] {
-				self.currentBestScore = dictionary["bestScore"] as? Double
-				print("Vitaly best score: \(self.currentBestScore)")
-				
 				self.nameLabel.text = dictionary["name"] as? String
 			}
 		})
 	}
+	
+//	func getBestScore() {
+//		//var topBestScore = 0.0
+//		let ref = DataService.dataService.REF_BASE
+//		_ = ref.child("users").child("bestScore").observeSingleEvent(of: .value, with: { (snapshot) in
+//			print("Snap: \(snapshot)")
+//				print("Snap.value: \(snapshot.value)")
+//			GameValues.bestScore = snapshot.value as! Double
+//			print("Top score in Game Values: \(GameValues.bestScore)")
+////			if let dictionary = snapshot.value as? [String: AnyObject] {
+////				topBestScore = (dictionary["bestScore"] as? Double)!
+////				print("All best score: \(topBestScore)")
+////				GameValues.bestScore = topBestScore
+////				print("Top score in Game Values: \(GameValues.bestScore)")
+////			}
+//		})
+//	}
 }
 
 

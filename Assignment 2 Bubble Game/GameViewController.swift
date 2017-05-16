@@ -21,6 +21,8 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		self.getBestScore()
+		
 		NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.segueToGameOverScene), name: NSNotification.Name(rawValue: "segueToGameOverScene"), object: nil)
 		
 		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
@@ -76,4 +78,14 @@ class GameViewController: UIViewController {
 		self.view = nil
 	}
 	
+	
+	func getBestScore() {
+		let ref = DataService.dataService.REF_BASE
+		_ = ref.child("users").child("bestScore").observeSingleEvent(of: .value, with: { (snapshot) in
+			print("Snap in game scene: \(snapshot)")
+			print("Snap.value in game scene: \(snapshot.value)")
+			GameValues.bestScore = snapshot.value as! Double
+			print("Top score in Game Values in game scene: \(GameValues.bestScore)")
+		})
+	}
 }

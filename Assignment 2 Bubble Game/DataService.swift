@@ -39,5 +39,7 @@ class DataService {
 		REF_USERS.child(uid).updateChildValues(userData)
 	}
 
-	
+	func updateBestScore(userData: Dictionary<String, Any>) {
+		REF_USERS.updateChildValues(userData)
+	}
 }

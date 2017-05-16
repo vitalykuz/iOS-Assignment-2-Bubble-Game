@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		25FC9624A6C4389266C8412A /* Pods_Assignment_2_Bubble_Game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6C7D7C9AA6A93647559AD7 /* Pods_Assignment_2_Bubble_Game.framework */; };
 		D81FA6701EC7E88E00490CDE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81FA66F1EC7E88E00490CDE /* User.swift */; };
-		D81FA6721EC7E91D00490CDE /* PlayersScoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81FA6711EC7E91D00490CDE /* PlayersScoreVC.swift */; };
+		D81FA6721EC7E91D00490CDE /* PlayersScorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81FA6711EC7E91D00490CDE /* PlayersScorVC.swift */; };
 		D8450AF61EC6829C000468C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450AF51EC6829C000468C7 /* AppDelegate.swift */; };
 		D8450AF81EC6829C000468C7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D8450AF71EC6829C000468C7 /* GameScene.sks */; };
 		D8450AFA1EC6829C000468C7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = D8450AF91EC6829C000468C7 /* Actions.sks */; };
@@ -38,7 +38,7 @@
 /* Begin PBXFileReference section */
 		32EBDAC62D97DC5A300BE31F /* Pods-Assignment 2 Bubble Game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment 2 Bubble Game.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment 2 Bubble Game/Pods-Assignment 2 Bubble Game.release.xcconfig"; sourceTree = "<group>"; };
 		D81FA66F1EC7E88E00490CDE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		D81FA6711EC7E91D00490CDE /* PlayersScoreVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersScoreVC.swift; sourceTree = "<group>"; };
+		D81FA6711EC7E91D00490CDE /* PlayersScorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersScorVC.swift; sourceTree = "<group>"; };
 		D8450AF21EC6829C000468C7 /* Assignment 2 Bubble Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment 2 Bubble Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8450AF51EC6829C000468C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8450AF71EC6829C000468C7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 				D8450AFD1EC6829C000468C7 /* GameViewController.swift */,
 				D8450AFB1EC6829C000468C7 /* GameScene.swift */,
 				D8450B0D1EC683DA000468C7 /* HomeScreenVC.swift */,
-				D81FA6711EC7E91D00490CDE /* PlayersScoreVC.swift */,
+				D81FA6711EC7E91D00490CDE /* PlayersScorVC.swift */,
 				D8523C081EC7F0BA001CCCA6 /* BestScoreCell.swift */,
 				D847F6D11EC8737400084B2A /* SettingsVC.swift */,
 				D8523C0A1EC86FD5001CCCA6 /* MenuVC.swift */,
@@ -335,7 +335,7 @@
 				D8D27B051EC950A0009BD67B /* GameOverVC.swift in Sources */,
 				D8450B281EC6F563000468C7 /* ButtonCustomView.swift in Sources */,
 				D8450B0E1EC683DA000468C7 /* HomeScreenVC.swift in Sources */,
-				D81FA6721EC7E91D00490CDE /* PlayersScoreVC.swift in Sources */,
+				D81FA6721EC7E91D00490CDE /* PlayersScorVC.swift in Sources */,
 				D8450B221EC6F428000468C7 /* ShadowView.swift in Sources */,
 				D8450B261EC6F48C000468C7 /* RoundButton.swift in Sources */,
 				D8450B201EC6F2A8000468C7 /* Constants.swift in Sources */,

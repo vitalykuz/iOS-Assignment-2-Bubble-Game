@@ -50,6 +50,7 @@ class GameScene: SKScene {
 		//bubbleTextures.append(SKTexture(imageNamed: "bubblePurple"))
 		//bubbleTextures.append(SKTexture(imageNamed: "bubbleOrange"))
 		
+		self.getBestScore()
 		
 		//SKPhysicsBody is a new data type that stores physical shapes of things. The next line creates a wall that cannot be passed by bubbles
 		physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
@@ -289,6 +290,14 @@ class GameScene: SKScene {
 		bubble.run(sequence)
 	}
 
-	
+	func getBestScore() {
+		let ref = DataService.dataService.REF_BASE
+		_ = ref.child("users").child("bestScore").observeSingleEvent(of: .value, with: { (snapshot) in
+			print("Snap in game scene: \(snapshot)")
+			print("Snap.value in game scene: \(snapshot.value)")
+			GameValues.bestScore = snapshot.value as! Double
+			print("Top score in Game Values in game scene: \(GameValues.bestScore)")
+		})
+	}
 	
 }
