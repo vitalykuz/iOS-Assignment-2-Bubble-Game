@@ -26,7 +26,7 @@ class PlayersScorVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 	}
 	
 	func fetchUser() {
-		FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
+		FIRDatabase.database().reference().child(USERS).observe(.childAdded, with: { (snapshot) in
 			
 			if let dictionary = snapshot.value as? [String: AnyObject] {
 				

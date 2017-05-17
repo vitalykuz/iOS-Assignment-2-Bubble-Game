@@ -26,12 +26,9 @@ class GameViewController: UIViewController {
 		NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.segueToGameOverScene), name: NSNotification.Name(rawValue: "segueToGameOverScene"), object: nil)
 		
 		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-    }
-	
-
+    }	
 	
 	func updateTimer() {
-		
 		switch count {
 		case 3:
 			countImage.image = UIImage(named: "2")
@@ -46,7 +43,6 @@ class GameViewController: UIViewController {
 			startGame()
 		default: break
 		}
-		
 		count = count - 1
 	}
 	
@@ -69,7 +65,6 @@ class GameViewController: UIViewController {
 	override var prefersStatusBarHidden: Bool {
 		return true
 	}
-
 	
 	func segueToGameOverScene(){
 		performSegue(withIdentifier: "toGameOverVC", sender: self)

@@ -21,16 +21,14 @@ class MenuVC: UIViewController {
     }
 	
 	@IBAction func startButtonTapped(_ sender: Any) {
-
 	}
 
 	@IBAction func topPlayersButtonTapped(_ sender: Any) {
-		
 	}
 	
 	@IBAction func settingsButtonTapped(_ sender: Any) {
-		
 	}
+	
 	@IBAction func logoutButtonTapped(_ sender: Any) {
 		KeychainWrapper.standard.removeObject(forKey: KEY_UID)
 		try! FIRAuth.auth()?.signOut()

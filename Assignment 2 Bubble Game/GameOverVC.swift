@@ -27,7 +27,7 @@ class GameOverVC: UIViewController {
 			self.updateBestScore()
 			
 		}
-			
+		
 		scoreLabel.text = "Score: \(GameValues.score)"
 		bestScoreLabel.text = "Top Score: \(GameValues.bestScore)"
     }
@@ -60,8 +60,6 @@ class GameOverVC: UIViewController {
 		let ref = DataService.dataService.REF_BASE
 		let userID = FIRAuth.auth()?.currentUser?.uid
 		_ = ref.child(USERS).child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-			//print("Snap: \(snapshot)")
-			
 			if let dictionary = snapshot.value as? [String: AnyObject] {
 				self.nameLabel.text = dictionary[NAME] as? String
 			}

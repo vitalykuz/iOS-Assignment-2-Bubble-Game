@@ -16,8 +16,6 @@ class SettingsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-		
     }
 	
 	@IBAction func doneButtonTapped(_ sender: Any) {

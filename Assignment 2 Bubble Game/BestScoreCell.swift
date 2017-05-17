@@ -12,11 +12,9 @@ class BestScoreCell: UITableViewCell {
 
 	@IBOutlet var nameLabel: UILabel!
 	@IBOutlet var scoreLabel: UILabel!
-	
-	
+		
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
 	func configureCell(user: User) {

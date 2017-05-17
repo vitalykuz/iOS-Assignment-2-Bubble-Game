@@ -21,7 +21,6 @@ struct GameValues {
 
 
 class GameScene: SKScene {
-	
 	//keeps the list of all bubbles images (textures) I have in assests folder
 	var bubbleTextures = [SKTexture]()
 	
@@ -36,7 +35,6 @@ class GameScene: SKScene {
 	
 	
 	override func didMove(to view: SKView) {
-		
 		// add bubble images from Assets
 		bubbleTextures.append(SKTexture(imageNamed: "bubbleRed"))
 		bubbleTextures.append(SKTexture(imageNamed: "bubblePink"))
@@ -100,7 +98,6 @@ class GameScene: SKScene {
 	}
 	
 	func createLabels() {
-		
 		timerLabel = self.childNode(withName: TIME_LABEL_NODE) as? SKLabelNode
 		timerLabel?.text = "Timer: \(GameValues.timerCount)"
 		
@@ -112,7 +109,6 @@ class GameScene: SKScene {
 	}
 	
 	func createBubble(with index: Int) {
-		
 		// creates a new Sprite node from the array of all images (textures)
 		let bubble = SKSpriteNode(texture: bubbleTextures[index])
 		bubble.name = String(index)
@@ -148,7 +144,6 @@ class GameScene: SKScene {
 	}
 	
 	func configurePhysics(for bubble: SKSpriteNode) {
-		
 		bubble.physicsBody = SKPhysicsBody(circleOfRadius: bubble.size.width / 2)
 		bubble.physicsBody?.linearDamping = 0.0
 		bubble.physicsBody?.angularDamping = 0.0
@@ -188,7 +183,6 @@ class GameScene: SKScene {
 	}
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-		
 		let touch:UITouch = touches.first! as UITouch
 		let positionInScene = touch.location(in: self)
 		let touchedNode = self.atPoint(positionInScene)
@@ -229,7 +223,6 @@ class GameScene: SKScene {
 	}
 	
 	func calculateScore(_ node: SKSpriteNode) {
-		
 		if (node.name == "0") {
 			calculateCombo(node)
 			GameValues.score += 1 * comboMultiplication
@@ -260,15 +253,12 @@ class GameScene: SKScene {
 		if currentlyClickedBubbleName == node.name {
 			comboMultiplication = 1.5;
 			numberOfTheSameBubblesClicked += 1
-			print(numberOfTheSameBubblesClicked)
-			
-			// TO_DO refactor this
 			if (numberOfTheSameBubblesClicked == 3 ) {
+				comboMultiplication = 2;
 				run(SKAction.playSoundFileNamed(COMBO_3X, waitForCompletion: false))
-
 			}
-
 			if (numberOfTheSameBubblesClicked == 5 ) {
+				comboMultiplication = 2.5;
 				run(SKAction.playSoundFileNamed(COMBO_5X, waitForCompletion: false))
 				numberOfTheSameBubblesClicked = 0
 			}
@@ -291,7 +281,7 @@ class GameScene: SKScene {
 
 	func getBestScore() {
 		let ref = DataService.dataService.REF_BASE
-		_ = ref.child("users").child("bestScore").observeSingleEvent(of: .value, with: { (snapshot) in
+		_ = ref.child(USERS).child(BEST_SCORE).observeSingleEvent(of: .value, with: { (snapshot) in
 			GameValues.bestScore = snapshot.value as! Double
 		})
 	}

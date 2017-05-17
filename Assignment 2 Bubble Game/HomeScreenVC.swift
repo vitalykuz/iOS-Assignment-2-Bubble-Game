@@ -21,7 +21,6 @@ class HomeScreenVC: UIViewController, UITextFieldDelegate {
 		emailLabel.delegate = self
 		passwordLabel.delegate = self
 		nameLabel.delegate = self
-        // Do any additional setup after loading the view.
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -32,27 +31,31 @@ class HomeScreenVC: UIViewController, UITextFieldDelegate {
 	}
 
 	@IBAction func logInButtontapped(_ sender: Any) {
-		if (emailLabel.text == "" || passwordLabel.text == "" || nameLabel.text == "" ) {
-			// TO-DO add an error
-			emailLabel.placeholder = "Please provide email"
+		if ((emailLabel.text?.isEmpty)! ) {
+			emailLabel.placeholder = ERROR_EMAIL_EMPTY
+		} else if ((passwordLabel.text?.isEmpty)! ) {
+			passwordLabel.placeholder = ERROR_PASSWORD_EMPTY
+		} else if ((nameLabel.text?.isEmpty)! ) {
+			nameLabel.placeholder = ERROR_NAME_EMPTY
 		} else {
 			if let email = emailLabel.text, let password = passwordLabel.text {
 				FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
 					if error == nil {
-						print("Vitaly: Firebase user authenticated")
 						if let user = user {
-							let userData = ["email" : user.email!, "name" : self.nameLabel.text!] as [String : Any]
+							let userData = [EMAIL : user.email!, NAME : self.nameLabel.text!] as [String : Any]
 							self.saveUserIdToKeyChain(id: user.uid, userData: userData as! Dictionary<String, String>)
 						}
 					} else {
 						FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { ( user , error) in
 							if error != nil {
-								// TO-DO: password must be at least 6 characters
-								print("Vitaly: user creation is failed")
+								self.emailLabel.text = ""
+								self.emailLabel.placeholder = ERROR_EMAIL_WRONG_FORMAT
+								
+								self.passwordLabel.text = ""
+								self.passwordLabel.placeholder = ERROR_PASSWORD_SHORT
 							} else {
-								print("Vitaly: User created")
 								if let user = user {
-									let userData = ["email" : user.email!, "bestScore" : 0.0, "name" : self.nameLabel.text!] as [String : Any]
+									let userData = [EMAIL : user.email!, BEST_SCORE : 0.0, NAME : self.nameLabel.text!] as [String : Any]
 									self.saveUserIdToKeyChain(id: user.uid, userData: userData )
 								}
 							}
@@ -79,6 +82,7 @@ class HomeScreenVC: UIViewController, UITextFieldDelegate {
 	func textFieldDidBeginEditing(_ textField: UITextField) {
 		animateViewMoving(up: true, moveValue: 120)
 	}
+	
 	func textFieldDidEndEditing(_ textField: UITextField) {
 		animateViewMoving(up: false, moveValue: 120)
 	}
