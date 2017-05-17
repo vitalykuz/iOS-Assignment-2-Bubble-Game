@@ -2,46 +2,39 @@
 //  MenuVC.swift
 //  Assignment 2 Bubble Game
 //
-//  Created by Vitaly Kuzenkov on 13/5/17.
+//  Created by Vitaly Kuzenkov on 14/5/17.
 //  Copyright © 2017 Vitaly Kuzenkov. All rights reserved.
 //
 
 import UIKit
-import SwiftyJSON
-
+import SceneKit
+import SpriteKit
+import GameplayKit
+import SwiftKeychainWrapper
+import Firebase
 
 class MenuVC: UIViewController {
-	@IBOutlet var nameLabel: UITextField!
-	@IBOutlet var bestScoreLabel: UITextField!
-	@IBOutlet var highScoreLabel: UITextField!
-	
-	var nameFromHome = ""
 
+	@IBOutlet var mainSKView: SKView!
     override func viewDidLoad() {
-        super.viewDidLoad()	
-
-		print("Name in Menu: \(nameFromHome)")
-        // Do any additional setup after loading the view.
-		nameLabel.text = nameFromHome
-
-   }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        super.viewDidLoad()
     }
 	
-	@IBAction func goBackTaped(_ sender: Any) {
-		
+	@IBAction func startButtonTapped(_ sender: Any) {
+	}
+
+	@IBAction func topPlayersButtonTapped(_ sender: Any) {
 	}
 	
+	@IBAction func settingsButtonTapped(_ sender: Any) {
+	}
 	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "toHomeVC" {
-			if segue.destination is HomeScreenVC {
-			}
-		}
-		
+	@IBAction func logoutButtonTapped(_ sender: Any) {
+		KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+		try! FIRAuth.auth()?.signOut()
+		GameValues.bestScore = 0.0
+		GameValues.timerCount = 10
+		performSegue(withIdentifier: "toHomeVC", sender: nil)
 	}
 	
 }
