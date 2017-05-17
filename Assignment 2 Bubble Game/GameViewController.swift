@@ -56,7 +56,6 @@ class GameViewController: UIViewController {
 			if let scene = SKScene(fileNamed: "GameScene") {
 				// Set the scale mode to scale to fit the window
 				scene.scaleMode = .aspectFill
-				//scene.scaleMode = .resizeFill
 				
 				scene.backgroundColor = UIColor(red:0.94, green:0.60, blue:0.60, alpha:0.7)
 				// Present the scene
@@ -78,14 +77,11 @@ class GameViewController: UIViewController {
 		self.view = nil
 	}
 	
-	
+	// TO-DO refactor to DataService class
 	func getBestScore() {
 		let ref = DataService.dataService.REF_BASE
 		_ = ref.child("users").child("bestScore").observeSingleEvent(of: .value, with: { (snapshot) in
-			print("Snap in game scene: \(snapshot)")
-			print("Snap.value in game scene: \(snapshot.value)")
 			GameValues.bestScore = snapshot.value as! Double
-			print("Top score in Game Values in game scene: \(GameValues.bestScore)")
 		})
 	}
 }

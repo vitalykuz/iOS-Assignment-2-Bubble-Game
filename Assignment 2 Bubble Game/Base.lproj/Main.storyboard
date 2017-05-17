@@ -77,9 +77,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ja1-nW-6f7" userLabel="Footer View">
                                         <rect key="frame" x="0.0" y="503" width="320" height="65"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If you have not signed up before, an account will be created automatically for you " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lr-g4-sn1">
-                                                <rect key="frame" x="8" y="8" width="304" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you have not signed up before, an account will be created automatically for you " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lr-g4-sn1">
+                                                <rect key="frame" x="8" y="8" width="304" height="49"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -93,8 +92,12 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.92156862750000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="3lr-g4-sn1" secondAttribute="trailing" constant="8" id="3D8-uT-xpM"/>
+                                            <constraint firstAttribute="bottom" secondItem="3lr-g4-sn1" secondAttribute="bottom" constant="8" id="6ML-VD-T5j"/>
+                                            <constraint firstItem="3lr-g4-sn1" firstAttribute="top" secondItem="ja1-nW-6f7" secondAttribute="top" constant="8" id="Fka-iH-h2k"/>
                                             <constraint firstAttribute="trailing" secondItem="8bK-tl-myZ" secondAttribute="trailing" id="PeB-fY-FKu"/>
                                             <constraint firstAttribute="height" constant="65" id="ac0-6q-EBH"/>
+                                            <constraint firstItem="3lr-g4-sn1" firstAttribute="leading" secondItem="ja1-nW-6f7" secondAttribute="leading" constant="8" id="frU-3g-SBs"/>
                                             <constraint firstItem="8bK-tl-myZ" firstAttribute="leading" secondItem="ja1-nW-6f7" secondAttribute="leading" id="jMB-nn-usU"/>
                                             <constraint firstAttribute="bottom" secondItem="8bK-tl-myZ" secondAttribute="bottom" id="qxO-vf-lD3"/>
                                         </constraints>
@@ -612,16 +615,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4AE-7H-DMy">
-                                                    <rect key="frame" x="16" y="16" width="288" height="28"/>
+                                                    <rect key="frame" x="16" y="16" width="736" height="28"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Vitaly" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMa-p9-1l1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="228.5" height="28"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="676.5" height="28"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70425" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuh-ka-8YM">
-                                                            <rect key="frame" x="228.5" y="0.0" width="59.5" height="28"/>
+                                                            <rect key="frame" x="676.5" y="0.0" width="59.5" height="28"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -702,6 +705,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Zx6-JO-Hve"/>
-        <segue reference="2zj-cv-Cjs"/>
+        <segue reference="c2k-Jd-Cs6"/>
     </inferredMetricsTieBreakers>
 </document>

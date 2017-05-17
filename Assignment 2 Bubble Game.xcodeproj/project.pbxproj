@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		25FC9624A6C4389266C8412A /* Pods_Assignment_2_Bubble_Game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6C7D7C9AA6A93647559AD7 /* Pods_Assignment_2_Bubble_Game.framework */; };
+		D81505EC1ECB06F200D69C01 /* Unstoppable.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D81505EB1ECB06F200D69C01 /* Unstoppable.mp3 */; };
+		D81505EE1ECB0DCD00D69C01 /* GodLike.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D81505ED1ECB0DCD00D69C01 /* GodLike.mp3 */; };
 		D81FA6701EC7E88E00490CDE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81FA66F1EC7E88E00490CDE /* User.swift */; };
 		D81FA6721EC7E91D00490CDE /* PlayersScorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81FA6711EC7E91D00490CDE /* PlayersScorVC.swift */; };
 		D8450AF61EC6829C000468C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8450AF51EC6829C000468C7 /* AppDelegate.swift */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		32EBDAC62D97DC5A300BE31F /* Pods-Assignment 2 Bubble Game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment 2 Bubble Game.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment 2 Bubble Game/Pods-Assignment 2 Bubble Game.release.xcconfig"; sourceTree = "<group>"; };
+		D81505EB1ECB06F200D69C01 /* Unstoppable.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Unstoppable.mp3; sourceTree = "<group>"; };
+		D81505ED1ECB0DCD00D69C01 /* GodLike.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GodLike.mp3; sourceTree = "<group>"; };
 		D81FA66F1EC7E88E00490CDE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D81FA6711EC7E91D00490CDE /* PlayersScorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersScorVC.swift; sourceTree = "<group>"; };
 		D8450AF21EC6829C000468C7 /* Assignment 2 Bubble Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment 2 Bubble Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +136,8 @@
 				D8450B071EC6829C000468C7 /* Info.plist */,
 				D8450B1A1EC6ED8A000468C7 /* GoogleService-Info.plist */,
 				D847F6DB1EC8A31600084B2A /* pop.wav */,
+				D81505EB1ECB06F200D69C01 /* Unstoppable.mp3 */,
+				D81505ED1ECB0DCD00D69C01 /* GodLike.mp3 */,
 			);
 			path = "Assignment 2 Bubble Game";
 			sourceTree = "<group>";
@@ -260,7 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8450B011EC6829C000468C7 /* Main.storyboard in Resources */,
+				D81505EE1ECB0DCD00D69C01 /* GodLike.mp3 in Resources */,
 				D8450AF81EC6829C000468C7 /* GameScene.sks in Resources */,
+				D81505EC1ECB06F200D69C01 /* Unstoppable.mp3 in Resources */,
 				D847F6DC1EC8A31600084B2A /* pop.wav in Resources */,
 				D8450B031EC6829C000468C7 /* Assets.xcassets in Resources */,
 				D8450B061EC6829C000468C7 /* LaunchScreen.storyboard in Resources */,

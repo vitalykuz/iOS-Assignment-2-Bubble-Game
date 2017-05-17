@@ -17,6 +17,7 @@ class DataService {
 	private var _REF_BASE = DB_BASE
 	private var _REF_USERS = DB_BASE.child("users")
 	private var _REF_BEST_SCORE = DB_BASE.child("users").child("bestScore")
+	private var _REF_BEST_SCORE_OF_ALL = DB_BASE.child("users").child("bestScore")
 	
 	
 	var REF_BASE: FIRDatabaseReference {

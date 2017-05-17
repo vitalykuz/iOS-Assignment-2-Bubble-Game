@@ -46,44 +46,27 @@ class GameOverVC: UIViewController {
 	func updateDatabase() {
 		let userID = FIRAuth.auth()?.currentUser?.uid
 		var bestScoreDict = Dictionary<String, Any>()
-		bestScoreDict = ["bestScore": GameValues.bestScore]
+		bestScoreDict = [BEST_SCORE: GameValues.bestScore]
 		DataService.dataService.updateBestScoreInDB(uid: userID!, userData: bestScoreDict)
 	}
 	
 	func updateBestScore() {
 		var bestScoreDict = Dictionary<String, Any>()
-		bestScoreDict = ["bestScore": GameValues.score]
+		bestScoreDict = [BEST_SCORE: GameValues.score]
 		DataService.dataService.updateBestScore(userData: bestScoreDict)
 	}
 	
 	func findUser() {
 		let ref = DataService.dataService.REF_BASE
 		let userID = FIRAuth.auth()?.currentUser?.uid
-		_ = ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+		_ = ref.child(USERS).child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
 			//print("Snap: \(snapshot)")
 			
 			if let dictionary = snapshot.value as? [String: AnyObject] {
-				self.nameLabel.text = dictionary["name"] as? String
+				self.nameLabel.text = dictionary[NAME] as? String
 			}
 		})
 	}
-	
-//	func getBestScore() {
-//		//var topBestScore = 0.0
-//		let ref = DataService.dataService.REF_BASE
-//		_ = ref.child("users").child("bestScore").observeSingleEvent(of: .value, with: { (snapshot) in
-//			print("Snap: \(snapshot)")
-//				print("Snap.value: \(snapshot.value)")
-//			GameValues.bestScore = snapshot.value as! Double
-//			print("Top score in Game Values: \(GameValues.bestScore)")
-////			if let dictionary = snapshot.value as? [String: AnyObject] {
-////				topBestScore = (dictionary["bestScore"] as? Double)!
-////				print("All best score: \(topBestScore)")
-////				GameValues.bestScore = topBestScore
-////				print("Top score in Game Values: \(GameValues.bestScore)")
-////			}
-//		})
-//	}
 }
 
 

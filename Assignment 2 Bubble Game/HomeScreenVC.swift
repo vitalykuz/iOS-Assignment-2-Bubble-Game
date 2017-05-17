@@ -18,7 +18,6 @@ class HomeScreenVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		
 		emailLabel.delegate = self
 		passwordLabel.delegate = self
 		nameLabel.delegate = self
@@ -31,14 +30,8 @@ class HomeScreenVC: UIViewController, UITextFieldDelegate {
 			performSegue(withIdentifier: MENU_VC, sender: nil)
 		}
 	}
-	
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 	@IBAction func logInButtontapped(_ sender: Any) {
-		
 		if (emailLabel.text == "" || passwordLabel.text == "" || nameLabel.text == "" ) {
 			// TO-DO add an error
 			emailLabel.placeholder = "Please provide email"

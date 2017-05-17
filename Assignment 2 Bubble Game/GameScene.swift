@@ -30,38 +30,26 @@ class GameScene: SKScene {
 	var scoreLabel: SKLabelNode?
 	var highScoreLabel: SKLabelNode?
 	var timer: Timer!
-	
-	
-	var currentlyClickedBubbleName = ""
+	var currentlyClickedBubbleName:String = ""
 	var comboMultiplication: Double = 1;
-	var numberOfTheSameBubblesClicked = 0
+	var numberOfTheSameBubblesClicked: Int = 1
 	
 	
 	override func didMove(to view: SKView) {
-		//print("User name in Game: \(userName)")
 		
+		// add bubble images from Assets
 		bubbleTextures.append(SKTexture(imageNamed: "bubbleRed"))
 		bubbleTextures.append(SKTexture(imageNamed: "bubblePink"))
 		bubbleTextures.append(SKTexture(imageNamed: "bubbleGreen"))
 		bubbleTextures.append(SKTexture(imageNamed: "bubbleBlue"))
 		bubbleTextures.append(SKTexture(imageNamed: "bubbleGray"))
 		
-		//bubbleTextures.append(SKTexture(imageNamed: "bubbleCyan"))
-		//bubbleTextures.append(SKTexture(imageNamed: "bubblePurple"))
-		//bubbleTextures.append(SKTexture(imageNamed: "bubbleOrange"))
-		
 		self.getBestScore()
 		
-		//SKPhysicsBody is a new data type that stores physical shapes of things. The next line creates a wall that cannot be passed by bubbles
+		//creates a wall that cannot be passed by bubbles
 		physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
-		// sets the gravity to 0. By default objects fall down like in real world from the top
 		physicsWorld.gravity = CGVector.zero
-		
-		print("Vitaly: Number of bubbles Settings \(GameValues.maxNumberOfBubbles)")
-		print("Vitaly: Game Seconds \(GameValues.timerCount)")
-		print("Vitaly: Best Score \(GameValues.bestScore)")
-		print("Vitaly: Score \(GameValues.score)")
-		//GameValues.bestScore = 0.0
+
 		GameValues.score = 0.0
 		
 		createRandomBubbles(maxNumberOfBubbles: GameValues.maxNumberOfBubbles)
@@ -86,7 +74,6 @@ class GameScene: SKScene {
 	}
 	
 	func removeBubbleFromScreen() {
-		
 		let diceRoll = Int(arc4random_uniform(UInt32(bubbles.count)))
 		for _ in 0...diceRoll {
 			if(bubbles.count > 0) {
@@ -95,7 +82,6 @@ class GameScene: SKScene {
 				
 				removeBubbleWithAnimation(bubble: randomBubble)
 				
-				//randomBubble.removeFromParent()
 				bubbles.remove(at: randomIndex)
 			}
 		}
@@ -115,34 +101,40 @@ class GameScene: SKScene {
 	
 	func createLabels() {
 		
-		timerLabel = self.childNode(withName: "timerLabel") as? SKLabelNode
+		timerLabel = self.childNode(withName: TIME_LABEL_NODE) as? SKLabelNode
 		timerLabel?.text = "Timer: \(GameValues.timerCount)"
 		
-		//creates a score label
-		scoreLabel = self.childNode(withName: "scoreLabel") as? SKLabelNode
+		scoreLabel = self.childNode(withName: SCORE_LABEL_NODE) as? SKLabelNode
 		scoreLabel?.text = "Score: \(GameValues.score)"
 		
-		highScoreLabel = self.childNode(withName: "highScoreLabel") as? SKLabelNode
+		highScoreLabel = self.childNode(withName: HIGH_SCORE_LABEL_NODE) as? SKLabelNode
 		highScoreLabel?.text = "High Score: \(GameValues.bestScore)"
 	}
 	
 	func createBubble(with index: Int) {
 		
-		// 1. create a new Sprite node from the array of all images (textures)
+		// creates a new Sprite node from the array of all images (textures)
 		let bubble = SKSpriteNode(texture: bubbleTextures[index])
 		bubble.name = String(index)
 		
-		// 3. give it the position of z = 1, so that it appears above any background
+		// gives it the position of z = 1, so that it appears above any background
 		bubble.zPosition = 1
 		
 		addChild(bubble)
 		
-		// 7. add the new bubble to array of bubbles on screen to later use
+		// adds the new bubble to array of bubbles on screen to later use
 		bubbles.append(bubble)
 		
-		// 8. make it appear somewhere randomly inside the game screen
+		// makes it appear somewhere randomly inside the game screen
 		let xPosition = GKARC4RandomSource.sharedRandom().nextInt(upperBound: 800)
-		let yPosition = GKARC4RandomSource.sharedRandom().nextInt(upperBound: 1300)
+		var yPosition = GKARC4RandomSource.sharedRandom().nextInt(upperBound: 1300)
+		
+		//makes the bubble appear outside the footer (high score) and header (timer and score). 150 is the height of the nodes
+		if (yPosition <= 150) {
+			yPosition = 150 + yPosition
+		} else if (yPosition >= 1200) {
+			yPosition = yPosition - 150
+		}
 		
 		bubble.position = CGPoint(x: xPosition, y: yPosition)
 		
@@ -163,11 +155,11 @@ class GameScene: SKScene {
 		bubble.physicsBody?.restitution = 1.0
 		bubble.physicsBody?.friction = 0.0
 		
-		//random number between -200 and 200
+		//random number between -200 and 200 to set up a direction to move
 		let motionX = GKRandomSource.sharedRandom().nextInt(upperBound: 400) - 200
 		let motionY = GKRandomSource.sharedRandom().nextInt(upperBound: 400) - 200
 		
-		//vector is a direction with attitude
+		//moves the buble to the direction
 		bubble.physicsBody?.velocity = CGVector(dx: motionX, dy: motionY)
 		bubble.physicsBody?.angularVelocity = CGFloat(GKRandomSource.sharedRandom().nextUniform())
 	}
@@ -177,7 +169,7 @@ class GameScene: SKScene {
 			return
 		}
 		bubbles.remove(at: index)
-		
+
 		calculateScore(node)
 		
 		node.physicsBody = nil
@@ -191,7 +183,7 @@ class GameScene: SKScene {
 		let sequence = SKAction.sequence([group, SKAction.removeFromParent()])
 		node.run(sequence)
 		
-		run(SKAction.playSoundFileNamed("pop.wav", waitForCompletion: false))
+		run(SKAction.playSoundFileNamed(POP_SOUND, waitForCompletion: false))
 		
 	}
 	
@@ -203,11 +195,8 @@ class GameScene: SKScene {
 		
 		if let name = touchedNode.name
 		{
-			if name == "timerLabel" || name == "scoreLabel" || name == "highScoreLabel"
+			if name == TIME_LABEL_NODE || name == SCORE_LABEL_NODE || name == HIGH_SCORE_LABEL_NODE
 			{
-				//timerLabel?.isUserInteractionEnabled = false
-				//scoreLabel?.isUserInteractionEnabled = false
-				//highScoreLabel?.isUserInteractionEnabled = false
 				touchedNode.isUserInteractionEnabled = false
 			} else {
 				pop(touchedNode as! SKSpriteNode)
@@ -259,7 +248,8 @@ class GameScene: SKScene {
 		}
 		
 		scoreLabel?.text = "Score: \(GameValues.score)"
-		//check if the current score > best score
+		
+		//checks if the current score > best score
 		if (GameValues.score >= GameValues.bestScore) {
 			GameValues.bestScore = GameValues.score
 			highScoreLabel?.text = "High Score: \(GameValues.score)"
@@ -270,12 +260,21 @@ class GameScene: SKScene {
 		if currentlyClickedBubbleName == node.name {
 			comboMultiplication = 1.5;
 			numberOfTheSameBubblesClicked += 1
-			if (numberOfTheSameBubblesClicked >= 2) {
-				run(SKAction.playSoundFileNamed("Unstoppable.mp3", waitForCompletion: false))
+			print(numberOfTheSameBubblesClicked)
+			
+			// TO_DO refactor this
+			if (numberOfTheSameBubblesClicked == 3 ) {
+				run(SKAction.playSoundFileNamed(COMBO_3X, waitForCompletion: false))
+
+			}
+
+			if (numberOfTheSameBubblesClicked == 5 ) {
+				run(SKAction.playSoundFileNamed(COMBO_5X, waitForCompletion: false))
+				numberOfTheSameBubblesClicked = 0
 			}
 		} else {
 			comboMultiplication = 1;
-			numberOfTheSameBubblesClicked = 0
+			numberOfTheSameBubblesClicked = 1
 		}
 		currentlyClickedBubbleName = node.name!
 	}
@@ -293,10 +292,7 @@ class GameScene: SKScene {
 	func getBestScore() {
 		let ref = DataService.dataService.REF_BASE
 		_ = ref.child("users").child("bestScore").observeSingleEvent(of: .value, with: { (snapshot) in
-			print("Snap in game scene: \(snapshot)")
-			print("Snap.value in game scene: \(snapshot.value)")
 			GameValues.bestScore = snapshot.value as! Double
-			print("Top score in Game Values in game scene: \(GameValues.bestScore)")
 		})
 	}
 	
