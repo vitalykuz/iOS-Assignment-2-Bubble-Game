@@ -20,7 +20,7 @@ let MENU_VC = "toMenuVC"
 let START_GAME_VC = "toStartGameVC"
 let TOP_PLAYERS_VC = "toTopPlayersVC"
 let SETTINGS_VC = "toSettingsVC"
-//let GAME_OVER_VC =
+let GAME_OVER_VC = "toGameOverVC"
 
 // Database names
 let BEST_SCORE = "bestScore"
@@ -43,7 +43,6 @@ let COMBO_5X = "Unstoppable.mp3"
 let ERROR_EMAIL_EMPTY = "Please provide email"
 let ERROR_PASSWORD_EMPTY = "Please provide password"
 let ERROR_NAME_EMPTY = "Please provide name"
-
 let ERROR_EMAIL_WRONG_FORMAT = "Wrong email address. Try again"
 let ERROR_PASSWORD_SHORT = "Password must be at least 6 symbols"
 

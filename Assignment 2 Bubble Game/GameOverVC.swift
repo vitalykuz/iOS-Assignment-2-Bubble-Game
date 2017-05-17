@@ -15,25 +15,32 @@ class GameOverVC: UIViewController {
 	@IBOutlet var nameLabel: UILabel!
 	@IBOutlet var scoreLabel: UILabel!
 	@IBOutlet var bestScoreLabel: UILabel!
+	//var currentPlayerBestScore = 0.0
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		self.findUser()
-		self.updateDatabase()
-		
-		if (GameValues.bestScore <= GameValues.score) {
-			//rename it
-			self.updateBestScore()
-			
+
+		if (GameValues.topScore <= GameValues.score) {
+			//print("I am here")
+			self.updateBestScore()			
 		}
 		
+		//print("Current best in Game Over \(GameValues.currentPlayerBestScore)")
+		if (GameValues.currentPlayerBestScore <= GameValues.score) {
+			//print("I am here in first one")
+			self.updateDatabase()
+		}
+		
+		//print("Top Score: \(GameValues.topScore)")
+		//print("Score: \(GameValues.score)")
 		scoreLabel.text = "Score: \(GameValues.score)"
-		bestScoreLabel.text = "Top Score: \(GameValues.bestScore)"
+		bestScoreLabel.text = "Top Score: \(GameValues.topScore)"
     }
 
 	@IBAction func playAgainButtonClicked(_ sender: Any) {
-		GameValues.timerCount = 10
+		GameValues.timerCount = 60
 		GameValues.score = 0.0
 	}
 
@@ -46,10 +53,11 @@ class GameOverVC: UIViewController {
 	func updateDatabase() {
 		let userID = FIRAuth.auth()?.currentUser?.uid
 		var bestScoreDict = Dictionary<String, Any>()
-		bestScoreDict = [BEST_SCORE: GameValues.bestScore]
+		bestScoreDict = [BEST_SCORE: GameValues.score]
 		DataService.dataService.updateBestScoreInDB(uid: userID!, userData: bestScoreDict)
 	}
 	
+	//updates all best score
 	func updateBestScore() {
 		var bestScoreDict = Dictionary<String, Any>()
 		bestScoreDict = [BEST_SCORE: GameValues.score]
@@ -65,6 +73,7 @@ class GameOverVC: UIViewController {
 			}
 		})
 	}
+	
 }
 
 

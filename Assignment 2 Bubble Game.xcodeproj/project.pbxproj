@@ -135,9 +135,6 @@
 				D8450B041EC6829C000468C7 /* LaunchScreen.storyboard */,
 				D8450B071EC6829C000468C7 /* Info.plist */,
 				D8450B1A1EC6ED8A000468C7 /* GoogleService-Info.plist */,
-				D847F6DB1EC8A31600084B2A /* pop.wav */,
-				D81505EB1ECB06F200D69C01 /* Unstoppable.mp3 */,
-				D81505ED1ECB0DCD00D69C01 /* GodLike.mp3 */,
 			);
 			path = "Assignment 2 Bubble Game";
 			sourceTree = "<group>";
@@ -190,6 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				D8450B1F1EC6F2A8000468C7 /* Constants.swift */,
+				D847F6DB1EC8A31600084B2A /* pop.wav */,
+				D81505EB1ECB06F200D69C01 /* Unstoppable.mp3 */,
+				D81505ED1ECB0DCD00D69C01 /* GodLike.mp3 */,
 			);
 			name = Util;
 			sourceTree = "<group>";

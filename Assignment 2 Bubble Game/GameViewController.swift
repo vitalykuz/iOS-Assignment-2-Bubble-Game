@@ -9,8 +9,7 @@
 import UIKit
 import SpriteKit
 import GameplayKit
-
-
+import Firebase
 
 class GameViewController: UIViewController {
 	@IBOutlet var countImage: UIImageView!
@@ -22,6 +21,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
 		self.getBestScore()
+		self.getCurrentUser()
 		
 		NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.segueToGameOverScene), name: NSNotification.Name(rawValue: "segueToGameOverScene"), object: nil)
 		
@@ -67,7 +67,7 @@ class GameViewController: UIViewController {
 	}
 	
 	func segueToGameOverScene(){
-		performSegue(withIdentifier: "toGameOverVC", sender: self)
+		performSegue(withIdentifier: GAME_OVER_VC, sender: self)
 		self.view.removeFromSuperview()
 		self.view = nil
 	}
@@ -75,8 +75,20 @@ class GameViewController: UIViewController {
 	// TO-DO refactor to DataService class
 	func getBestScore() {
 		let ref = DataService.dataService.REF_BASE
-		_ = ref.child("users").child("bestScore").observeSingleEvent(of: .value, with: { (snapshot) in
-			GameValues.bestScore = snapshot.value as! Double
+		_ = ref.child(USERS).child(BEST_SCORE).observeSingleEvent(of: .value, with: { (snapshot) in
+			GameValues.topScore = snapshot.value as! Double
+			//print("Current top score in Game Controller: \(GameValues.topScore)")
+		})
+	}
+	
+	func getCurrentUser() {
+		let ref = DataService.dataService.REF_BASE
+		let userID = FIRAuth.auth()?.currentUser?.uid
+		_ = ref.child(USERS).child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+			if let dictionary = snapshot.value as? [String: AnyObject] {
+				GameValues.currentPlayerBestScore = dictionary[BEST_SCORE] as! Double
+				//print("Current user best: \(GameValues.currentPlayerBestScore)")
+			}
 		})
 	}
 }

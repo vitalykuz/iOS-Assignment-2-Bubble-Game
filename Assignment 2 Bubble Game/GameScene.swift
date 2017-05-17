@@ -14,9 +14,11 @@ import Foundation
 struct GameValues {
 	static var score: Double = 0;
 	static var bestScore: Double = 0;
-	static var gameSeconds: Int! = 20
-	static var timerCount: Int = 10
+	static var topScore: Double  = 0.0
+	static var gameSeconds: Int! = 60
+	static var timerCount: Int = 60
 	static var maxNumberOfBubbles: Int = 15
+	static var currentPlayerBestScore: Double = 0.0
 }
 
 
@@ -42,7 +44,7 @@ class GameScene: SKScene {
 		bubbleTextures.append(SKTexture(imageNamed: "bubbleBlue"))
 		bubbleTextures.append(SKTexture(imageNamed: "bubbleGray"))
 		
-		self.getBestScore()
+		//self.getBestScore()
 		
 		//creates a wall that cannot be passed by bubbles
 		physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
@@ -105,7 +107,7 @@ class GameScene: SKScene {
 		scoreLabel?.text = "Score: \(GameValues.score)"
 		
 		highScoreLabel = self.childNode(withName: HIGH_SCORE_LABEL_NODE) as? SKLabelNode
-		highScoreLabel?.text = "High Score: \(GameValues.bestScore)"
+		highScoreLabel?.text = "High Score: \(GameValues.topScore)"
 	}
 	
 	func createBubble(with index: Int) {
@@ -243,9 +245,9 @@ class GameScene: SKScene {
 		scoreLabel?.text = "Score: \(GameValues.score)"
 		
 		//checks if the current score > best score
-		if (GameValues.score >= GameValues.bestScore) {
-			GameValues.bestScore = GameValues.score
-			highScoreLabel?.text = "High Score: \(GameValues.score)"
+		if (GameValues.score >= GameValues.topScore) {
+			GameValues.topScore = GameValues.score
+			highScoreLabel?.text = "Top Score: \(GameValues.topScore)"
 		}
 	}
 	
@@ -282,7 +284,8 @@ class GameScene: SKScene {
 	func getBestScore() {
 		let ref = DataService.dataService.REF_BASE
 		_ = ref.child(USERS).child(BEST_SCORE).observeSingleEvent(of: .value, with: { (snapshot) in
-			GameValues.bestScore = snapshot.value as! Double
+			GameValues.topScore = snapshot.value as! Double
+			print("Current top score in Game Scene: \(GameValues.topScore)")
 		})
 	}
 	
